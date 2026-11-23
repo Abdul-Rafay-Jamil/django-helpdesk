@@ -182,6 +182,8 @@ class TicketEmailNotificationTests(TestCase):
         )
 
         # Update the ticket status to REOPENED so submitter should not be emailed.
+        self.existing_ticket.status = Ticket.CLOSED_STATUS
+        self.existing_ticket.save(update_fields=["status"])
         self.outbox.clear()  # Remove the prior emails
         update_ticket(
             self.update_user,
@@ -308,6 +310,8 @@ class TicketEmailNotificationTests(TestCase):
         )
 
         # Update the ticket status to REOPENED - submitter should be emailed.
+        self.existing_ticket.status = Ticket.CLOSED_STATUS
+        self.existing_ticket.save(update_fields=["status"])
         self.outbox.clear()  # Remove the prior emails
         update_ticket(
             self.update_user,

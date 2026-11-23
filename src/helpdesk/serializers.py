@@ -6,7 +6,11 @@ from rest_framework.exceptions import ValidationError
 from .forms import TicketForm
 from .lib import format_time_spent
 from .models import CustomField, FollowUp, FollowUpAttachment, Ticket
-from .update_ticket import update_ticket
+from .update_ticket import (
+    InvalidStatusTransition,
+    update_ticket,
+    validate_status_transition,
+)
 from .user import HelpdeskUser
 
 
@@ -131,16 +135,19 @@ class FollowUpSerializer(serializers.ModelSerializer):
             user = validated_data["user"]
         else:
             user = self.context["request"].user
-        return update_ticket(
-            user=user,
-            ticket=validated_data["ticket"],
-            title=validated_data.get("title", None),
-            comment=validated_data.get("comment", ""),
-            files=validated_data.get("attachments", None),
-            public=validated_data.get("public", False),
-            new_status=validated_data.get("new_status", None),
-            time_spent=validated_data.get("time_spent", None),
-        )
+        try:
+            return update_ticket(
+                user=user,
+                ticket=validated_data["ticket"],
+                title=validated_data.get("title", None),
+                comment=validated_data.get("comment", ""),
+                files=validated_data.get("attachments", None),
+                public=validated_data.get("public", False),
+                new_status=validated_data.get("new_status", None),
+                time_spent=validated_data.get("time_spent", None),
+            )
+        except InvalidStatusTransition as error:
+            raise ValidationError({"new_status": error.messages}) from error
 
     def update(self, instance, validated_data):
         # Who wrote a follow-up, which ticket it belongs to and the email
@@ -312,6 +319,12 @@ class TicketSerializer(BaseTicketSerializer):
         raise ValidationError(ticket_form.errors)
 
     def update(self, instance, validated_data):
+        try:
+            validate_status_transition(
+                instance, validated_data.get("status", instance.status)
+            )
+        except InvalidStatusTransition as error:
+            raise ValidationError({"status": error.messages}) from error
         instance = super().update(instance, validated_data)
         instance.save_custom_field_values(validated_data)
         return instance
