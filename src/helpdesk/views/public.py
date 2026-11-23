@@ -295,15 +295,18 @@ class ViewTicket(TemplateView):
             )
 
         if "close" in request.GET and ticket.status == Ticket.RESOLVED_STATUS:
-            from helpdesk.update_ticket import update_ticket
+            from helpdesk.update_ticket import InvalidStatusTransition, update_ticket
 
-            update_ticket(
-                request.user,
-                ticket,
-                public=True,
-                comment=_("Submitter accepted resolution and closed ticket"),
-                new_status=Ticket.CLOSED_STATUS,
-            )
+            try:
+                update_ticket(
+                    request.user,
+                    ticket,
+                    public=True,
+                    comment=_("Submitter accepted resolution and closed ticket"),
+                    new_status=Ticket.CLOSED_STATUS,
+                )
+            except InvalidStatusTransition as error:
+                raise PermissionDenied(error.messages[0]) from error
             return HttpResponseRedirect(ticket.ticket_url)
 
         followups = (
