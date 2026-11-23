@@ -1,0 +1,60 @@
+name: SQE mutation validation
+
+on:
+  push:
+    branches: [sqe/mutation-validation]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14.6"
+
+      - name: Record environment and install pinned dependencies
+        shell: bash
+        run: |
+          mkdir -p mutation-evidence
+          {
+            git rev-parse HEAD
+            git rev-parse HEAD:src
+            python --version
+            cat /etc/os-release
+            uname -m
+          } > mutation-evidence/environment.txt
+          python -m venv "$RUNNER_TEMP/sqe-tools"
+          python -m venv "$RUNNER_TEMP/sqe-tests"
+          "$RUNNER_TEMP/sqe-tools/bin/python" -m pip install -r tests/team/mutation/runner-dependencies.txt
+          "$RUNNER_TEMP/sqe-tests/bin/python" -m pip install -r tests/team/mutation/test-dependencies.txt
+          "$RUNNER_TEMP/sqe-tools/bin/python" -m pip freeze > mutation-evidence/runner-dependencies.txt
+          "$RUNNER_TEMP/sqe-tests/bin/python" -m pip freeze > mutation-evidence/test-dependencies.txt
+
+      - name: Verify control and run all 111 mutants
+        shell: bash
+        run: |
+          run_dir="$RUNNER_TEMP/sqe-mutation"
+          git clone --quiet --no-checkout --shared "$GITHUB_WORKSPACE" "$run_dir/control"
+          git -C "$run_dir/control" checkout --quiet --detach "$GITHUB_SHA"
+          "$RUNNER_TEMP/sqe-tools/bin/python" tests/team/mutation/run_campaign.py \
+            --sandbox "$run_dir" --output "$GITHUB_WORKSPACE/mutation-evidence" \
+            --test-python "$RUNNER_TEMP/sqe-tests/bin/python" --workers 3 \
+            | tee mutation-evidence/campaign-console.txt
+
+      - name: Preserve mutation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sqe-mutation-evidence
+          path: mutation-evidence/
+          if-no-files-found: error
