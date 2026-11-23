@@ -1,0 +1,9 @@
+{
+  "review": "Initial reviewed Ticket Management scope from the full hosted validation of f0b96485.",
+  "inventory": {
+    "discovered": 1780,
+    "selected": 111,
+    "discovered_sha256": "8bbd44a68cfeefe61f939b180ab10f283aa8ec0fa8971b70a14665f4a3db3928",
+    "selected_sha256": "e0832ae21e61dc951d38c82182f7e4276f5e71ed58638be2fd225d539f042fed"
+  }
+}

@@ -20,7 +20,6 @@ from cosmic_ray.work_db import use_db
 from cosmic_ray.work_item import TestOutcome, WorkerOutcome
 from operators import OPERATORS
 
-REVISION = "e71b858b19eb9a7f0e19be9a9c2a80ac6b0cb83c"
 UPDATE = "src/helpdesk/update_ticket.py"
 STAFF = "src/helpdesk/views/staff.py"
 TARGETS = (UPDATE, STAFF)
@@ -52,6 +51,11 @@ TESTS = (
     "tests/team/regression",
 )
 TIMEOUT = 45
+MINIMUM_PERCENT = 95
+CUSTOM_SITES = {
+    "sqe/IgnoreConfiguredTransitionFlow": UPDATE,
+    "sqe/CloseAsResolved": STAFF,
+}
 plugins.OPERATOR_PROVIDERS["sqe"] = OPERATORS
 
 
@@ -89,7 +93,9 @@ def classify(result):
         return "invalid"
     output = result.output or ""
     lines = output.splitlines()
-    if "SQE_PYTEST_EXIT=1" in lines and ("FAILED " in output or "ERROR " in output):
+    if "SQE_PYTEST_EXIT=1" in lines and any(
+        line.startswith(("FAILED tests/", "ERROR tests/")) for line in lines
+    ):
         return "killed"
     if result.test_outcome == TestOutcome.SURVIVED and "SQE_PYTEST_EXIT=0" in lines:
         return "survived"
@@ -146,85 +152,37 @@ def read_inventory(control, database):
         return [item.mutations[0] for item in session.pending_work_items]
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sandbox", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--test-python", type=Path, required=True)
-    parser.add_argument("--workers", type=int, default=3)
-    args = parser.parse_args()
-    assert version("cosmic-ray") == "8.9.0"
-    control = args.sandbox.resolve() / "control"
-    output = args.output.resolve()
-    test_python = args.test_python.absolute()
-    output.mkdir(parents=True, exist_ok=True)
-    assert not any(output.glob("results/*.json"))
-    test_revision = git(control, "rev-parse", "HEAD")
-    assert git(control, "rev-parse", "HEAD:src") == git(
-        control, "rev-parse", f"{REVISION}:src"
-    )
-    assert not git(control, "status", "--porcelain")
-    changed_tests = git(
-        control, "diff", "--name-only", REVISION, test_revision, "--", "tests"
-    )
-    assert set(changed_tests.splitlines()) - {
-        "tests/team/unit/test_mutation_regressions.py"
-    } <= {
-        path
-        for path in changed_tests.splitlines()
-        if path.startswith("tests/team/mutation/")
-    }
-    output.joinpath("results").mkdir(exist_ok=True)
-
-    runner = Path(__file__).with_name("run_tests.py").resolve()
-    command = shlex.join([test_python.as_posix(), runner.as_posix(), *TESTS])
-    save(
-        output / "config.json",
-        {
-            "production_revision": REVISION,
-            "production_tree": git(control, "rev-parse", f"{REVISION}:src"),
-            "test_revision": test_revision,
-            "cosmic_ray": version("cosmic-ray"),
-            "test_command": command,
-            "timeout_seconds": TIMEOUT,
-            "workers": args.workers,
-            "targets": list(TARGETS),
-            "standard_operators_for_update_ticket": sorted(CORE),
-            "custom_operators": sorted(OPERATORS),
-        },
-    )
-    control_result = run_one(control, command, (), output / "control-junit.xml")
-    save(output / "control.json", control_result)
-    assert control_result["classification"] == "survived", control_result
-    suite = ElementTree.parse(output / "control-junit.xml").find("testsuite")
-    assert {
-        key: suite.get(key) for key in ("tests", "failures", "errors", "skipped")
-    } == {"tests": "249", "failures": "0", "errors": "0", "skipped": "0"}
-    assert (
-        len(
+def inventory_digest(mutations):
+    sites = [
+        json.dumps(
             [
-                case
-                for case in suite.iter("testcase")
-                if case.get("classname").startswith("tests.team.requirements.")
-            ]
+                m.module_path.as_posix(),
+                m.operator_name,
+                m.occurrence,
+                m.start_pos,
+                m.end_pos,
+                m.definition_name,
+                m.operator_args,
+            ],
+            sort_keys=True,
+            separators=(",", ":"),
         )
-        == 77
-    )
-    print(f"Unmutated control passed in {control_result['elapsed_s']} s", flush=True)
+        for m in mutations
+    ]
+    return hashlib.sha256("\n".join(sorted(sites)).encode()).hexdigest()
+
+
+def check_scope(control, output):
     inventory = read_inventory(control, output / "discovered.sqlite")
     candidates = [
-        mutation
-        for mutation in inventory
+        m
+        for m in inventory
         if (
-            mutation.module_path.as_posix() == UPDATE
-            and mutation.operator_name.removeprefix("core/") in CORE
+            m.module_path.as_posix() == UPDATE
+            and m.operator_name.removeprefix("core/") in CORE
         )
-        or mutation.operator_name.startswith("sqe/")
+        or m.operator_name.startswith("sqe/")
     ]
-    assert {
-        m.operator_name for m in candidates if m.operator_name.startswith("sqe/")
-    } == {f"sqe/{name}" for name in OPERATORS}
-    assert sum(m.operator_name.startswith("sqe/") for m in candidates) == 2
     candidates.sort(
         key=lambda m: (
             not m.operator_name.startswith("sqe/"),
@@ -234,21 +192,140 @@ def main():
             m.occurrence,
         )
     )
-    assert len(candidates) == 111
-    selected_ids = sorted(mutation_id(m) for m in candidates)
-    digest = hashlib.sha256("\n".join(selected_ids).encode()).hexdigest()
-    assert (
-        digest == "719f0e6ea7bf823786bdbe181d9ee04faf632366055fd9b4764bbffd33c15e1d"
-    ), "Mutation cohort differs from the original 111"
+    observed = {
+        "discovered": len(inventory),
+        "selected": len(candidates),
+        "discovered_sha256": inventory_digest(inventory),
+        "selected_sha256": inventory_digest(candidates),
+    }
     save(
         output / "inventory.json",
         {
-            "discovered": len(inventory),
-            "selected": len(candidates),
+            **observed,
             "mutants": [{"id": mutation_id(m), **asdict(m)} for m in candidates],
         },
     )
-    print(f"Selected {len(candidates)} of {len(inventory)} discovered", flush=True)
+    manifest = json.loads(
+        (control / "tests/team/mutation/scope.json").read_text(encoding="utf-8")
+    )
+    custom = {
+        name: [m.module_path.as_posix() for m in candidates if m.operator_name == name]
+        for name in CUSTOM_SITES
+    }
+    errors = []
+    if custom != {name: [path] for name, path in CUSTOM_SITES.items()} or any(
+        m.operator_name.startswith("sqe/") and m.operator_name not in CUSTOM_SITES
+        for m in candidates
+    ):
+        errors.append(
+            "Each required custom operator must generate exactly one mutant at its declared target."
+        )
+    if observed != manifest["inventory"] or not manifest["review"].strip():
+        errors.append(
+            "Mutation scope drift. Review the candidate inventory and update scope.json explicitly."
+        )
+    save(
+        output / "scope-verification.json",
+        {
+            "reviewed": manifest,
+            "observed": observed,
+            "custom_sites": custom,
+            "errors": errors,
+        },
+    )
+    if errors:
+        raise SystemExit(" ".join(errors))
+    return candidates, observed
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sandbox", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--test-python", type=Path, required=True)
+    parser.add_argument("--candidate-sha", required=True)
+    parser.add_argument("--base-sha", required=True)
+    parser.add_argument("--workers", type=int, default=3)
+    args = parser.parse_args()
+    assert version("cosmic-ray") == "8.9.0"
+    control = args.sandbox.resolve() / "control"
+    output = args.output.resolve()
+    test_python = args.test_python.absolute()
+    output.mkdir(parents=True, exist_ok=True)
+    (output / "results").mkdir()
+
+    candidate_sha = git(control, "rev-parse", "HEAD")
+    if candidate_sha != args.candidate_sha or git(control, "status", "--porcelain"):
+        raise SystemExit("Control checkout must be clean and match the candidate SHA.")
+    if git(control, "rev-parse", f"{args.base_sha}^{{commit}}") != args.base_sha:
+        raise SystemExit("Base SHA did not resolve to the expected commit.")
+    changed = git(
+        control, "diff", "--name-only", args.base_sha, candidate_sha, "--", "src"
+    ).splitlines()
+    outside = sorted(set(changed) - set(TARGETS))
+    save(
+        output / "production-scope.json",
+        {
+            "tested_sha": candidate_sha,
+            "base_sha": args.base_sha,
+            "changed_source_paths": changed,
+            "changed_paths_outside_target_files": outside,
+            "staff_scope": "Only the custom Close target is measured in views/staff.py.",
+            "update_scope": "Only declared stock operator types and the custom transition guard are measured.",
+        },
+    )
+    patch = git(
+        control, "diff", "--unified=0", args.base_sha, candidate_sha, "--", "src"
+    )
+    (output / "source-changes.diff").write_text(patch + "\n", encoding="utf-8")
+    print(
+        f"Tested candidate {candidate_sha}; changed production paths outside target files: {outside}",
+        flush=True,
+    )
+    runner = Path(__file__).with_name("run_tests.py").resolve()
+    command = shlex.join([test_python.as_posix(), runner.as_posix(), *TESTS])
+    save(
+        output / "config.json",
+        {
+            "tested_sha": candidate_sha,
+            "base_sha": args.base_sha,
+            "production_tree": git(control, "rev-parse", "HEAD:src"),
+            "cosmic_ray": version("cosmic-ray"),
+            "test_command": command,
+            "timeout_seconds": TIMEOUT,
+            "workers": args.workers,
+            "targets": list(TARGETS),
+            "standard_operators_for_update_ticket": sorted(CORE),
+            "custom_operators": CUSTOM_SITES,
+            "minimum_percent": MINIMUM_PERCENT,
+        },
+    )
+
+    result = run_one(control, command, (), output / "control-junit.xml")
+    save(output / "control.json", result)
+    if result["classification"] != "survived":
+        raise SystemExit("Unmutated control failed. See control.json.")
+    suite = ElementTree.parse(output / "control-junit.xml").find("testsuite")
+    counts = {
+        key: int(suite.get(key)) for key in ("tests", "failures", "errors", "skipped")
+    }
+    required = sum(
+        c.get("classname", "").startswith("tests.team.requirements.")
+        for c in suite.iter("testcase")
+    )
+    if required != 77 or any(counts[key] for key in ("failures", "errors", "skipped")):
+        raise SystemExit(
+            f"Unmutated control must execute all 77 requirements without failures or skips: {counts}"
+        )
+    print(
+        f"Unmutated control passed {counts['tests']} cases ({required} requirements)",
+        flush=True,
+    )
+
+    candidates, observed = check_scope(control, output)
+    print(
+        f"Selected {len(candidates)} of {observed['discovered']} discovered", flush=True
+    )
     with ProcessPoolExecutor(max_workers=args.workers) as executor:
         shards = [
             executor.submit(
@@ -257,7 +334,7 @@ def main():
                 command,
                 candidates[i :: args.workers],
                 output / "results",
-                test_revision,
+                candidate_sha,
             )
             for i in range(args.workers)
         ]
@@ -267,27 +344,41 @@ def main():
         path.stem: json.loads(path.read_text(encoding="utf-8"))
         for path in (output / "results").glob("*.json")
     }
-    assert sorted(outcomes) == selected_ids
+    if set(outcomes) != {mutation_id(m) for m in candidates}:
+        raise SystemExit("Missing or unexpected per-mutant results.")
     counts = {label: 0 for label in ("killed", "survived", "timeout", "invalid")}
-    for result in outcomes.values():
-        counts[result["classification"]] += 1
+    for row in outcomes.values():
+        counts[row["classification"]] += 1
+    custom_results = {
+        m.operator_name: outcomes[mutation_id(m)]["classification"]
+        for m in candidates
+        if m.operator_name in CUSTOM_SITES
+    }
+    errors = []
+    if counts["killed"] * 100 < MINIMUM_PERCENT * len(candidates):
+        errors.append(
+            f"Raw mutation score below the {MINIMUM_PERCENT}% project threshold."
+        )
+    if any(result != "killed" for result in custom_results.values()):
+        errors.append("Both custom mutants must be killed.")
+    if counts["timeout"] or counts["invalid"]:
+        errors.append("Timed-out and invalid mutants fail the gate.")
     summary = {
-        "production_revision": REVISION,
-        "test_revision": test_revision,
-        "discovered": len(inventory),
-        "selected": len(candidates),
-        "outside_scope": len(inventory) - len(candidates),
-        "cohort_sha256": digest,
+        "tested_sha": candidate_sha,
+        "base_sha": args.base_sha,
+        **observed,
+        "outside_scope": observed["discovered"] - observed["selected"],
         "counts": counts,
         "raw_score": counts["killed"] / len(candidates),
-        "custom_results_included": {
-            m.operator_name: outcomes[mutation_id(m)]["classification"]
-            for m in candidates
-            if m.operator_name.startswith("sqe/")
-        },
+        "minimum_percent": MINIMUM_PERCENT,
+        "custom_results_included": custom_results,
+        "gate": "failed" if errors else "passed",
+        "errors": errors,
     }
     save(output / "summary.json", summary)
     print(json.dumps(summary, indent=2), flush=True)
+    if errors:
+        raise SystemExit(" ".join(errors))
 
 
 if __name__ == "__main__":

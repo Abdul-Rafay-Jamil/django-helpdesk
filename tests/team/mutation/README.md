@@ -1,11 +1,15 @@
-# Ticket Management mutation validation
+# Ticket Management mutation gate
 
-The production source is pinned to `e71b858b19eb9a7f0e19be9a9c2a80ac6b0cb83c`. The runner records the separate test commit and requires its entire `src` tree to match that baseline. The mutation cohort has 109 stock mutants in `update_ticket.py` and two custom mutants at the shared status guard and the staff Close target. The runner verifies the cohort ID checksum against the original 111. Ticket intake, public handlers, serializer internals and the rest of the staff module sit outside the mutation score.
+The GitHub Actions check is named **SQE Mutation Gate**. On a PR targeting main it checks out GitHub's merge candidate and records the merge, head and base SHAs. The unmutated control and every Cosmic Ray worker execute against clean detached checkouts of that merge candidate. The control must pass with all 77 requirement cases and zero skips before mutant generation. The runner starts each invocation with a fresh result directory.
 
-The validation workflow runs on GitHub-hosted Ubuntu with Python 3.14.6. It installs the pinned runner and test dependency lists in separate virtual environments. From a clean checkout of this branch, reproduce it by creating a sandbox with a detached checkout of the test commit in its `control` subdirectory and running:
+The scope is Ticket Management's shared update module, with 12 named stock operator types and the custom configured transition guard, plus the custom staff detail Close target. The initial cohort contains 109 stock and two custom mutants. The workflow records the full PR production diff and explicitly lists changed source files outside the target files. In the staff module only the Close target is measured. Intake, public view handlers and serializer internals have no score under this scope.
+
+The committed scope.json records reviewed candidate counts and fingerprints for both the full discovered inventory and the selected cohort. They include paths, operators, occurrence, function and source positions. A mismatch fails after publishing the observed inventory. Review changes to production scope and operators in the PR, update the manifest with the observed counts and fingerprints only after reviewing the sites, and document the rationale in its review field. Both custom operators must generate exactly one site at their declared module, independently of the manifest.
+
+The project policy is **95% raw mutation score** across all selected mutants, with both custom mutants killed and zero timeouts or invalids. With the original 111 this requires at least 106 kills. The assignment calls for a justified threshold and does not specify 95%. Failures preserve the available test, inventory and mutant evidence as a workflow artifact. This scope review and score must be revisited when the business rules or their selected modules change.
+
+To run locally, install the pinned tool and test dependency lists in separate Python 3.14.6 environments. Put a clean detached checkout of the candidate in the sandbox's control directory. Run:
 
 ```text
-<runner-python> tests/team/mutation/run_campaign.py --sandbox <sandbox> --output <new-evidence-dir> --test-python <test-python> --workers 3
+<runner-python> tests/team/mutation/run_campaign.py --sandbox <sandbox> --output <new-evidence-dir> --test-python <test-python> --candidate-sha <candidate-sha> --base-sha <base-sha> --workers 3
 ```
-
-Only after the unmutated 249-case control passes with all 77 requirements and zero skips does the campaign execute. Every worker starts from a clean detached checkout of the test commit. Cosmic Ray runs each test process against a fresh SQLite test schema without migrations and the script verifies source restoration. The raw denominator includes all 111 selected mutants. Timeout and invalid counts are separate. The validation job publishes the control JUnit, scope, version lists, summary and per-mutant evidence. It is branch-scoped and has no required-check configuration.
