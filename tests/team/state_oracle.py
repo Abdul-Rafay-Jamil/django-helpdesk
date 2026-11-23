@@ -2,7 +2,6 @@
 
 from helpdesk.models import Ticket
 
-
 OPEN = Ticket.OPEN_STATUS
 REOPENED = Ticket.REOPENED_STATUS
 RESOLVED = Ticket.RESOLVED_STATUS
