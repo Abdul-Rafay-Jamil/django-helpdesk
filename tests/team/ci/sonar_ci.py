@@ -62,7 +62,7 @@ def scan(scanner, project, coverage, output, sha):
     global AUTH
     wait_for_server()
     AUTH = base64.b64encode(b"admin:admin").decode()
-    password = secrets.token_urlsafe(32)
+    password = secrets.token_urlsafe(32) + "aA7!@#"
     api(
         "users/change_password",
         post={"login": "admin", "previousPassword": "admin", "password": password},
