@@ -15,7 +15,6 @@ jobs:
     timeout-minutes: 12
     env:
       PYTHONPATH: ${{ github.workspace }}/src
-      COVERAGE_FILE: ${{ runner.temp }}/sqe-unit.coverage
     steps:
       - uses: actions/checkout@v6
         with:
@@ -29,6 +28,7 @@ jobs:
       - name: Measure candidate unit coverage
         shell: bash
         run: |
+          export COVERAGE_FILE="$RUNNER_TEMP/sqe-unit.coverage"
           mkdir -p coverage-results
           git rev-parse HEAD > coverage-results/candidate.txt
           test "$(cat coverage-results/candidate.txt)" = "$GITHUB_SHA"
