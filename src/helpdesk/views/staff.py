@@ -94,6 +94,7 @@ from helpdesk.models import (
 from helpdesk.query import get_query_class, query_from_base64, query_to_base64
 from helpdesk.sanitize import preview_csp, sanitize_email_html, sanitizer_available
 from helpdesk.update_ticket import (
+    InvalidStatusTransition,
     return_ticketccstring_and_show_subscribe,
     subscribe_to_ticket_updates,
     update_ticket,
@@ -546,14 +547,17 @@ def view_ticket(request, ticket_id):
         else:
             owner = ticket.assigned_to.id
 
-        update_ticket(
-            request.user,
-            ticket,
-            owner=owner,
-            comment=_("Accepted resolution and closed ticket"),
-            new_status=Ticket.CLOSED_STATUS,
-            public=True,
-        )
+        try:
+            update_ticket(
+                request.user,
+                ticket,
+                owner=owner,
+                comment=_("Accepted resolution and closed ticket"),
+                new_status=Ticket.CLOSED_STATUS,
+                public=True,
+            )
+        except InvalidStatusTransition as error:
+            messages.error(request, error.messages[0])
         return return_to_ticket(request.user, ticket)
 
     extra_context_kwargs = get_form_extra_kwargs(request.user)
@@ -777,7 +781,10 @@ def update_ticket_view(request, ticket_id, *args, **kwargs):
 
 def save_ticket_update(form, ticket, user):
     comment = form.data.get("comment", "")
-    new_status = int(form.data.get("new_status", ticket.status))
+    try:
+        new_status = int(form.data.get("new_status", ticket.status))
+    except (TypeError, ValueError) as error:
+        raise InvalidStatusTransition(_("Select a valid ticket status.")) from error
     title = form.cleaned_data.get("title", ticket.title)
     owner = int(form.data.get("owner", -1))
     priority = int(form.cleaned_data.get("priority", ticket.priority))
@@ -1537,7 +1544,11 @@ class UpdateTicketView(
         except PermissionDenied:
             return redirect_to_login(self.request.path, settings.LOGIN_URL)
         # Avoid calling super as it will call the save() method on the form
-        save_ticket_update(form, self.ticket, self.request.user)
+        try:
+            save_ticket_update(form, self.ticket, self.request.user)
+        except InvalidStatusTransition as error:
+            form.add_error(None, error)
+            return self.form_invalid(form)
         return return_to_ticket(self.request.user, self.ticket)
 
 
