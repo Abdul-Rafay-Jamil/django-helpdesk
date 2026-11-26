@@ -161,7 +161,7 @@ def verify(project, coverage, output):
 
 if __name__ == "__main__":
     scanner, source, destination = sys.argv[1:]
-    coverage, output = Path(source), Path(destination)
+    coverage, output = Path(source), Path(destination).resolve()
     properties = dict(
         line.split("=", 1)
         for line in Path("sonar-project.properties").read_text().splitlines()
