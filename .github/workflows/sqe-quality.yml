@@ -80,6 +80,9 @@ jobs:
           python3 tests/team/ci/sonar_ci.py \
             "$RUNNER_TEMP/sonar-scanner-8.1.0.6389-linux-x64/bin/sonar-scanner" \
             coverage-results/coverage.xml sonar-results
+      - name: Capture SonarQube container diagnostics on failure
+        if: failure()
+        run: docker logs sqe-sonar > sonar-results/server.log 2>&1
       - name: Preserve SonarQube evidence
         if: always()
         uses: actions/upload-artifact@v4

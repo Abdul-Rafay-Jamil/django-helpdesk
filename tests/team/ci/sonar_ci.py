@@ -49,10 +49,10 @@ def api(endpoint, *, post=None, **query):
 def wait_for_server():
     for _ in range(60):
         try:
-            status = api("system/status")["status"]
-            if status == "UP":
-                return
-        except (URLError, TimeoutError):
+            with urlopen(HOST + "/api/system/status", timeout=12) as response:
+                if json.load(response)["status"] == "UP":
+                    return
+        except (URLError, OSError):
             pass
         time.sleep(5)
     raise SystemExit("SonarQube did not become ready")
