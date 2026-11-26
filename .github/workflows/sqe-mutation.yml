@@ -3,6 +3,7 @@ name: SQE mutation CI
 on:
   pull_request:
     branches: [main]
+  workflow_call:
 
 permissions:
   contents: read
@@ -50,13 +51,14 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
+          base_sha="${PR_BASE_SHA:-$(git rev-parse "$GITHUB_SHA^1")}"
           run_dir="$RUNNER_TEMP/sqe-mutation"
           git clone --quiet --no-checkout --shared "$GITHUB_WORKSPACE" "$run_dir/control"
           git -C "$run_dir/control" checkout --quiet --detach "$GITHUB_SHA"
           "$RUNNER_TEMP/sqe-tools/bin/python" tests/team/mutation/run_campaign.py \
             --sandbox "$run_dir" --output "$GITHUB_WORKSPACE/mutation-evidence" \
             --test-python "$RUNNER_TEMP/sqe-tests/bin/python" --workers 3 \
-            --candidate-sha "$GITHUB_SHA" --base-sha "$PR_BASE_SHA" \
+            --candidate-sha "$GITHUB_SHA" --base-sha "$base_sha" \
             |& tee mutation-evidence/campaign-console.txt
 
       - name: Preserve mutation evidence

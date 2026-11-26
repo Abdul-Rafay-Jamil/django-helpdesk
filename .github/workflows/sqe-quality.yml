@@ -1,0 +1,97 @@
+name: SQE coverage and SonarQube
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  coverage:
+    name: SQE Coverage Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONPATH: ${{ github.workspace }}/src
+      COVERAGE_FILE: ${{ runner.temp }}/sqe-unit.coverage
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14.6"
+      - name: Install pinned team test dependencies
+        run: python -m pip install -r tests/team/mutation/test-dependencies.txt
+      - name: Measure candidate unit coverage
+        shell: bash
+        run: |
+          mkdir -p coverage-results
+          git rev-parse HEAD > coverage-results/candidate.txt
+          test "$(cat coverage-results/candidate.txt)" = "$GITHUB_SHA"
+          python -m coverage run --rcfile=tests/team/.coveragerc -m pytest --ds=tests.test_settings \
+            --junitxml=coverage-results/junit.xml tests/team/unit |& tee coverage-results/pytest.txt
+          python -m coverage json --rcfile=tests/team/.coveragerc -o coverage-results/coverage.json
+          python -m coverage xml --rcfile=tests/team/.coveragerc -o coverage-results/coverage.xml
+          python tests/team/ci/workflow_coverage.py coverage-results/coverage.json > coverage-results/workflow.json
+      - name: Enforce statement and branch floors
+        run: python tests/team/ci/check_coverage.py coverage-results
+      - name: Preserve coverage evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sqe-coverage
+          path: coverage-results/
+          if-no-files-found: error
+
+  sonar:
+    name: SQE SonarQube Gate
+    needs: coverage
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: sqe-coverage
+          path: coverage-results
+      - name: Start isolated SonarQube and download scanner
+        shell: bash
+        run: |
+          mkdir -p sonar-results
+          test "$(cat coverage-results/candidate.txt)" = "$GITHUB_SHA"
+          test -s coverage-results/summary.json
+          sudo sysctl -w vm.max_map_count=524288
+          docker run -d --name sqe-sonar -p 127.0.0.1:9000:9000 \
+            sonarqube:26.11.0.134175-community@sha256:7b2296713a92b8ea0dd7a083a25faadc59376c9a1e6daf2744a89711c54ea1ba
+          curl -fsSLo "$RUNNER_TEMP/sonar.zip" \
+            https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-8.1.0.6389-linux-x64.zip
+          unzip -q "$RUNNER_TEMP/sonar.zip" -d "$RUNNER_TEMP"
+      - name: Enforce the SonarQube quality gate
+        run: |
+          python3 tests/team/ci/sonar_ci.py \
+            "$RUNNER_TEMP/sonar-scanner-8.1.0.6389-linux-x64/bin/sonar-scanner" \
+            coverage-results/coverage.xml sonar-results
+      - name: Preserve SonarQube evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sqe-sonarqube
+          path: sonar-results/
+          if-no-files-found: error
+
+  deployment-authorization:
+    name: SQE Quality Deployment Authorization
+    needs: [coverage, sonar]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record quality approval without publishing
+        run: printf 'Quality checks authorize release preparation of %s\n' "$GITHUB_SHA"
