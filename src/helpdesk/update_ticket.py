@@ -149,6 +149,18 @@ def subscribe_to_ticket_updates(
         )
 
 
+class InvalidStatusTransition(ValidationError):
+    """The requested status is outside the ticket's configured flow."""
+
+
+def validate_status_transition(ticket: Ticket, new_status: int) -> None:
+    """Validate a status change while allowing updates that keep the status."""
+    if new_status == ticket.status:
+        return
+    if new_status not in dict(ticket.get_allowed_status_flow):
+        raise InvalidStatusTransition(_("This ticket status change is not allowed."))
+
+
 def get_and_set_ticket_status(
     new_status: int, ticket: Ticket, follow_up: FollowUp
 ) -> tuple[str, int]:
@@ -272,6 +284,10 @@ def update_ticket(
     message_id=None,
     customfields_form=None,
 ):
+    if new_status is None:
+        new_status = ticket.status
+    validate_status_transition(ticket, new_status)
+
     # We need to allow the 'ticket' and 'queue' contexts to be applied to the
     # comment.
     context = safe_template_context(ticket)
@@ -281,8 +297,6 @@ def update_ticket(
         priority = ticket.priority
     if queue == -1:
         queue = ticket.queue.id
-    if new_status is None:
-        new_status = ticket.status
     if new_checklists is None:
         new_checklists = {}
 

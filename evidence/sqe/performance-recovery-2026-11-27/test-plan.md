@@ -1,0 +1,9 @@
+# EC3 performance plan fixed before execution
+
+- Operation. Authenticated staff ticket detail via `GET /api/tickets/{id}/`. This retrieves the same record used for intake/assignment readback (FR06) and follow-up/resolution readback (FR07–FR10).
+- Workload. Four sequential runs on the same local server and same read-only SQLite seed. Run 1 VU twice and 5 VUs twice. Use initialized constant VUs for 65 seconds each, one GET per iteration, then one second of think time. The extra five seconds leave margin for measuring at least 60 seconds at the target load. Restart k6 between runs. The server stays up, so later repetitions may have warmer OS/runtime caches. Check that the saved business records match before and after every run.
+- Acceptance. Use the original EC3 limits for both workloads, **p95 ≤ 500 ms** and **unexpected failures < 1%**, independently per run. A detail lookup is interactive and should normally return in half a second on loopback. A sub-1% error budget limits interrupted desk actions at either load. These criteria were already defined in the scope and remain fixed.
+- Definition. p95 is k6 `http_req_duration`. Count transport errors, any non-200 or redirect, malformed JSON, missing fields, and the wrong ticket ID/title/status as unexpected failures. Count every attempt in the denominator. Capture requests per second as measured throughput without imposing an additional throughput threshold.
+- Environment. Local Django live server, fixture staff session, one synthetic ticket with opening history, default ticket serializer, SQLite, current fixed candidate with the prior accessibility template patch. Loopback results characterize only this build, seed and workload.
+
+Risk R06 covers slow or failing concurrent retrievals. [Scope, EC3](<../../../.project_instruction_files/Sqe_Scope_and_Test_Management (1).md>) · [k6 constant VUs](https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-vus/)

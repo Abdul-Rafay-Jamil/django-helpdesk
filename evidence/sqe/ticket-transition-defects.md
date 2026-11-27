@@ -1,0 +1,33 @@
+# Ticket transition defect reports
+
+Observed on django-helpdesk 2.6.1 at `040c40a0d19169233c6e4e532530b5826a89b87c`, with the default state map and synthetic SQLite fixtures. SQE-01 is fixed and verified on an open fix PR. SQE-02 passes on the newer fork baseline. The observations below describe the original defective builds. [Original requirements](white-box-completion-2026-11-23/requirements-junit.xml) · [Historical characterization](white-box-pr-prep-2026-11-23/characterization-pytest.txt)
+
+## SQE-01 Forbidden transitions persist on three staff write paths
+
+**Proposed severity S2, major. Priority P1, next fix.** This violates W2 FR08, FR10 and BR04 (R02 and R07). A routine status update can put a ticket into a state the configured policy forbids. The failures occur even with an eligible staff account and valid status enum values.
+
+Reproduce on synthetic tickets as authorized staff. Create one Closed ticket per route and give each a known resolution and prior follow-up. Record the status, resolution, modified timestamp and follow-up IDs. Submit the Resolved target through each route below, then read back those same fields. The full test matrix repeats this for all ten forbidden pairs. [Transition matrix](../../tests/team/requirements/test_staff_transition_matrix.py) · [Original Closed → Resolved cases](../../tests/team/requirements/test_closed_transition.py)
+
+| Path | Expected persisted state | Observed persisted state |
+| --- | --- | --- |
+| Staff update form POST `/tickets/<id>/update/` | Closed and original resolution, timestamp and history intact. | HTTP 302, Resolved, timestamp changed, and one new status follow-up. With a blank comment the original resolution became empty. |
+| Ticket PATCH `/api/tickets/<id>/` | Client error and no change to status, resolution, timestamp or history. | HTTP 200, Resolved, timestamp changed, original resolution retained, and no added follow-up. |
+| Follow-up POST `/api/followups/` | Client error and no change to the ticket or follow-ups. | HTTP 201, Resolved, timestamp changed, and one new status follow-up. With a blank comment the original resolution became empty. |
+
+The 30 failures share a missing configured-transition check, with two persistence paths. The staff form passes `new_status` through `save_ticket_update` to `update_ticket`. Follow-up POST validates the status choice before `FollowUpSerializer.create` calls the same update function. There, `get_and_set_ticket_status` compares the numeric status and saves a change without consulting the allowed map. Ticket PATCH bypasses that helper and delegates persistence to DRF through `TicketSerializer.update`. Its model choice validation establishes that the target exists in the enum. It does not validate the source/target pair. Public `ViewTicket.post` performs a separate membership check, which explains why the public transition matrix passes. [Staff form](../../src/helpdesk/views/staff.py#L775) · [Follow-up serializer](../../src/helpdesk/serializers.py#L129) · [Shared update](../../src/helpdesk/update_ticket.py#L152) · [Ticket serializer](../../src/helpdesk/serializers.py#L307) · [Public check](../../src/helpdesk/views/public.py#L241)
+
+The fix shares one configured transition validator between `update_ticket` and `TicketSerializer.update`. Each calls it before writing. The validator allows the current status as a no-op and checks changed targets against the ticket's configured flow. The staff form reports a validation error and DRF reports `status` for ticket PATCH or `new_status` for follow-up POST. Existing permission checks remain in place. Staff and public detail Close also handle a configured rejection without changing the ticket. [Fix PR #2](https://github.com/Abdul-Rafay-Jamil/django-helpdesk/pull/2)
+
+On the protected fork, the hosted requirement suite went from **47 passed and 30 failed** on PR #1 to **77 passed** on PR #2, with zero errors or skips in both runs. Test IDs and requirement-file hashes match. Local validation passed all 77 requirements and 112 targeted regressions, including mixed-field write rejection and a configured alternative flow. Both PRs remain open and unmerged. [Blocked baseline JUnit](requirement-gate-2026-11-23/hosted-requirements-junit.xml) · [Fix JUnit](sqe-01-fix-2026-11-23/hosted-requirements-junit.xml) · [Local regressions](sqe-01-fix-2026-11-23/local-regression-junit.xml) · [Hosted verification](sqe-01-fix-2026-11-23/verified-requirement-run.json)
+
+## SQE-02 Staff detail Close leaves tickets Resolved and overwrites the resolution
+
+**Proposed severity S3, moderate. Priority P1, next fix.** This violates W2 FR08 and BR04 (R02 and R07). The staff update form can perform the allowed Resolved → Closed transition, which provides a workaround for closing the ticket. The detail action itself can replace the real resolution with a generic message.
+
+Reproduce as staff with a synthetic Resolved ticket whose resolution is “Paper path cleared.” Exercise the built-in Close action on staff detail `/tickets/<id>/?close=1`. Test both an assigned and unassigned ticket. Confirm the persisted status, owner, resolution and follow-up metadata. [Executable requirement cases](../../tests/team/requirements/test_staff_detail_close.py)
+
+Expected results are Closed status, original owner and resolution, and one follow-up with Closed as the new status and a Status change entry. Both cases instead returned HTTP 302, kept the status Resolved, replaced the resolution with “Accepted resolution and closed ticket,” and wrote a follow-up whose new status is null. The raw assertion includes the stored status, resolution and follow-up. [Requirement failure log](white-box-completion-2026-11-23/requirements-pytest.txt)
+
+The staff detail handler enters its Close branch and calls `update_ticket` without a target status. The helper defaults to the existing Resolved status. The resolution replacement rule applies whenever the resulting status is Resolved, so the Close action's comment replaces the current resolution even though no transition occurs. This defect differs from SQE-01 because this route supplies no transition target. [Close branch](../../src/helpdesk/views/staff.py#L542) · [Status default](../../src/helpdesk/update_ticket.py#L284) · [Resolution replacement](../../src/helpdesk/update_ticket.py#L418)
+
+The fork tip already passes an explicit Closed target, and both original Close requirement cases now pass on the fork and in PR #2. Repeat-Close coverage can be added as a follow-on regression. [Fork-tip run](fork-tip-7f657a39-2026-11-23/requirements-junit.xml) · [Fix run](sqe-01-fix-2026-11-23/hosted-requirements-junit.xml)

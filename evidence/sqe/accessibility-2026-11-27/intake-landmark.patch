@@ -1,0 +1,25 @@
+diff --git a/src/helpdesk/templates/helpdesk/public_create_ticket.html b/src/helpdesk/templates/helpdesk/public_create_ticket.html
+index 9e7bcd9f..287cf6b5 100644
+--- a/src/helpdesk/templates/helpdesk/public_create_ticket.html
++++ b/src/helpdesk/templates/helpdesk/public_create_ticket.html
+@@ -8,17 +8,17 @@
+ 
+ 
+ {% block helpdesk_body %}
+-  <div class="row">
++  <main class="row" aria-labelledby="submit-ticket-heading">
+     <div class="col col-md-6 col-lg-4 mx-auto">
+       <div class="card">
+         <div class="card-body">
+-          <h5>{% translate "Submit a Ticket" %}</h5>
++          <h5 id="submit-ticket-heading">{% translate "Submit a Ticket" %}</h5>
+           {% include "helpdesk/public_create_ticket_base.html" %}
+         </div>
+       </div>
+ 
+     </div>
+-  </div>
++  </main>
+ {% endblock helpdesk_body %}
+ 
+ {% block helpdesk_js %}

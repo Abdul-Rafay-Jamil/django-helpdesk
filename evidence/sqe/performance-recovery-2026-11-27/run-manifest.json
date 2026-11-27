@@ -1,0 +1,62 @@
+[
+  {
+    "run": "1vu-run1",
+    "vus": 1,
+    "exit_code": 0,
+    "before": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    },
+    "after": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    }
+  },
+  {
+    "run": "1vu-run2",
+    "vus": 1,
+    "exit_code": 0,
+    "before": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    },
+    "after": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    }
+  },
+  {
+    "run": "5vu-run1",
+    "vus": 5,
+    "exit_code": 0,
+    "before": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    },
+    "after": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    }
+  },
+  {
+    "run": "5vu-run2",
+    "vus": 5,
+    "exit_code": 0,
+    "before": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    },
+    "after": {
+      "seed_sha256": "0687c3912dfbab5fcfa8121f9945da7dbe0518fcda8e267f33cbfffaf9e46b3b",
+      "tickets": 1,
+      "followups": 1
+    }
+  }
+]

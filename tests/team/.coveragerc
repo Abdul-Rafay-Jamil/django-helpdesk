@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = src/helpdesk
+relative_files = True
+omit = */helpdesk/migrations/*
+
+[report]
+show_missing = True

@@ -1,24 +1,69 @@
-name: Publish ${package_name} to PyPI and ReadTheDocs
+name: Publish an SQE-verified build to PyPI
 
 on:
-  push:
-    tags:
-      - "v*"
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing v-prefixed tag at the selected main commit
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
 jobs:
+  candidate:
+    name: Verify the protected release candidate
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.release_tag }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require the selected main commit and matching release tag
+        shell: bash
+        run: |
+          test "$GITHUB_REF" = refs/heads/main
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git rev-parse origin/main)" = "$GITHUB_SHA"
+          [[ "$RELEASE_TAG" =~ ^v[0-9][0-9A-Za-z._-]*$ ]]
+          test "$(git rev-parse --verify "refs/tags/$RELEASE_TAG^{commit}")" = "$GITHUB_SHA"
+
+  requirements:
+    needs: candidate
+    uses: ./.github/workflows/sqe-requirements.yml
+
+  mutation:
+    needs: candidate
+    uses: ./.github/workflows/sqe-mutation.yml
+
+  quality:
+    needs: candidate
+    uses: ./.github/workflows/sqe-quality.yml
+
+  integration:
+    needs: candidate
+    uses: ./.github/workflows/sqe-integration.yml
+
   build-n-publish:
     name: Build and publish to PyPI
     runs-on: ubuntu-latest
-    # Specifying a GitHub environment is optional, but strongly encouraged
+    needs: [candidate, requirements, mutation, quality, integration]
     environment: release
     permissions:
       # IMPORTANT: this permission is mandatory for Trusted Publishing
+      contents: read
       id-token: write
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.sha }}
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v7

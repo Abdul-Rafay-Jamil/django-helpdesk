@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="267.636" timestamp="2026-11-27T10:55:03.437803+05:00" hostname="Berlin"><testcase classname="tests.team.performance.run_workload" name="test_ticket_detail_workloads" time="267.432" /></testsuite></testsuites>

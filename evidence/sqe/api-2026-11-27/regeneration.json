@@ -1,0 +1,68 @@
+{
+  "original_spec_sha256": "4af3884e2d966d4d0b8b2baca7e64070bc0addf35f54672b45be6a94c9c564be",
+  "variant_spec_sha256": "580e8d9b2a057dd3aad9fbf690c700ef8ca0e10287af57ba75b0aa4d7a115115",
+  "original_cases": 561,
+  "variant_cases": 557,
+  "examples": {
+    "title maximum 200 to 80": {
+      "original": {
+        "below": {
+          "value": 199,
+          "valid": true
+        },
+        "at": {
+          "value": 200,
+          "valid": true
+        },
+        "above": {
+          "value": 201,
+          "valid": false
+        }
+      },
+      "changed": {
+        "below": {
+          "value": 79,
+          "valid": true
+        },
+        "at": {
+          "value": 80,
+          "valid": true
+        },
+        "above": {
+          "value": 81,
+          "valid": false
+        }
+      }
+    },
+    "priority maximum 5 to 4": {
+      "original": {
+        "below": {
+          "value": 4,
+          "valid": true
+        },
+        "at": {
+          "value": 5,
+          "valid": true
+        },
+        "above": {
+          "value": 6,
+          "valid": false
+        }
+      },
+      "changed": {
+        "below": {
+          "value": 3,
+          "valid": true
+        },
+        "at": {
+          "value": 4,
+          "valid": true
+        },
+        "above": {
+          "value": 5,
+          "valid": false
+        }
+      }
+    }
+  }
+}

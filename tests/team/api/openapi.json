@@ -1,0 +1,2939 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SQE Ticket Management",
+    "version": "1.0.0",
+    "description": "Contract for PR #5 fixed revision bec9c208 with default settings and the optional 12-character asset fixture. JSON API and customer intake only. DELETE, editing follow-ups, user provisioning, attachment management routes and deployment-specific custom fields are outside the selected operations. Session mutations require Django CSRF; Basic uses staff/customer credentials. The format renderer is exercised on reads as a shared transport setting. Read-only submitted properties are ignored; application deviations are recorded in the test evidence."
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Application mount at the test root"
+    }
+  ],
+  "security": [
+    {
+      "session": []
+    },
+    {
+      "basic": []
+    }
+  ],
+  "paths": {
+    "/tickets/submit/": {
+      "post": {
+        "operationId": "submitPublic",
+        "summary": "Submit via the supported customer HTML form",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [],
+        "responses": {
+          "302": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Redisplayed form with input errors",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "customer",
+        "x-sqe-seed": {
+          "queue": "$fixture:queue",
+          "title": "Customer intake",
+          "body": "Paper jam",
+          "priority": 3,
+          "submitter_email": "customer@example.test"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicSubmission"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicSubmission"
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-sqe-known-deviations": [
+          "A text part named attachment is silently ignored by the HTML form. Binary uploads are the supported input."
+        ]
+      }
+    },
+    "/api/tickets/": {
+      "get": {
+        "operationId": "listTickets",
+        "summary": "List accessible staff tickets",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/StatusFilter"
+          },
+          {
+            "$ref": "#/components/parameters/Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TicketPage"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff"
+      },
+      "post": {
+        "operationId": "createTicket",
+        "summary": "Create Open ticket and initial follow-up",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ticket"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff",
+        "x-sqe-seed": {
+          "queue": "$fixture:queue",
+          "title": "Printer intake",
+          "description": "Printer is offline",
+          "priority": 3,
+          "submitter_email": "customer@example.test"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketCreate"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketCreate"
+              }
+            }
+          }
+        },
+        "x-sqe-known-deviations": [
+          "Omitted description can return HTTP 500 instead of HTTP 400.",
+          "Fractional relationship IDs that coerce to an existing integer ID are accepted.",
+          "resolution, merged_to and on_hold are accepted but ignored at creation."
+        ]
+      }
+    },
+    "/api/tickets/{id}/": {
+      "get": {
+        "operationId": "getTicket",
+        "summary": "Retrieve shared ticket and follow-ups",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Id"
+          },
+          {
+            "$ref": "#/components/parameters/StatusFilter"
+          },
+          {
+            "$ref": "#/components/parameters/Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ticket"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff"
+      },
+      "patch": {
+        "operationId": "patchTicket",
+        "summary": "Assign or partially update an accessible ticket",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Id"
+          },
+          {
+            "$ref": "#/components/parameters/StatusFilter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ticket"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff",
+        "x-sqe-seed": {},
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketPatch"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketPatch"
+              }
+            }
+          }
+        },
+        "x-sqe-known-deviations": [
+          "Fractional relationship IDs that coerce to an existing integer ID are accepted.",
+          "An attachment accepted on update does not create an attachment row."
+        ]
+      },
+      "put": {
+        "operationId": "putTicket",
+        "summary": "Replace/revalidate supplied ticket fields",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Id"
+          },
+          {
+            "$ref": "#/components/parameters/StatusFilter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ticket"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff",
+        "x-sqe-seed": {
+          "queue": "$fixture:queue",
+          "title": "Updated subject",
+          "description": "Printer checked",
+          "priority": 3
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketReplace"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketReplace"
+              }
+            }
+          }
+        },
+        "x-sqe-known-deviations": [
+          "An accepted fractional relationship ID can persist its coerced integer ID.",
+          "An attachment accepted on update does not create an attachment row."
+        ]
+      }
+    },
+    "/api/followups/": {
+      "get": {
+        "operationId": "listFollowUps",
+        "summary": "List accessible follow-ups",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpPage"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff"
+      },
+      "post": {
+        "operationId": "createFollowUp",
+        "summary": "Append staff follow-up and optional status change",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUp"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff",
+        "x-sqe-seed": {
+          "ticket": "$fixture:ticket",
+          "title": "Existing ticket",
+          "comment": "Inspected printer"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FollowUpWrite"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/FollowUpWrite"
+              }
+            }
+          }
+        },
+        "x-sqe-known-deviations": [
+          "A null comment can return HTTP 500.",
+          "Fractional ticket and user IDs that coerce to an existing ID are accepted."
+        ]
+      }
+    },
+    "/api/followups/{id}/": {
+      "get": {
+        "operationId": "getFollowUp",
+        "summary": "Retrieve a follow-up in an accessible queue",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Id"
+          },
+          {
+            "$ref": "#/components/parameters/Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUp"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "staff"
+      }
+    },
+    "/api/user_tickets/": {
+      "get": {
+        "operationId": "listCustomerTickets",
+        "summary": "List tickets matching the authenticated customer's nonempty email",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/PageSize"
+          },
+          {
+            "$ref": "#/components/parameters/Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerTicketPage"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "customer"
+      }
+    },
+    "/api/user_tickets/{id}/": {
+      "get": {
+        "operationId": "getCustomerTicket",
+        "summary": "Retrieve the customer's permitted ticket projection",
+        "tags": [
+          "Ticket Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Id"
+          },
+          {
+            "$ref": "#/components/parameters/Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerTicket"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": ""
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission or CSRF denial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Object, page or renderer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Media type is not acceptable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported request media type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-sqe-audience": "customer"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "session": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "sessionid"
+      },
+      "basic": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "TicketTitle": {
+        "type": "string",
+        "example": "Printer investigation",
+        "minLength": 1,
+        "maxLength": 200
+      },
+      "Priority": {
+        "type": "integer",
+        "example": 3,
+        "minimum": 1,
+        "maximum": 5,
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "description": "Canonical priority codes. DRF also accepts equivalent strings.",
+        "x-sqe-cases": [
+          {
+            "label": "numeric_string",
+            "value": "3",
+            "valid": true
+          },
+          {
+            "label": "fraction",
+            "value": 2.5,
+            "valid": false
+          },
+          {
+            "label": "boolean",
+            "value": true,
+            "valid": false
+          }
+        ]
+      },
+      "StatusCode": {
+        "type": "integer",
+        "example": 3,
+        "minimum": 1,
+        "maximum": 5,
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "description": "Open=1, Reopened=2, Resolved=3, Closed=4, Duplicate=5. The configured state-flow guard also applies to writes.",
+        "x-sqe-cases": [
+          {
+            "label": "numeric_string",
+            "value": "3",
+            "valid": true
+          },
+          {
+            "label": "fraction",
+            "value": 2.5,
+            "valid": false
+          },
+          {
+            "label": "boolean",
+            "value": true,
+            "valid": false
+          }
+        ]
+      },
+      "SubmitterEmail": {
+        "type": "string",
+        "example": "watcher@example.test",
+        "format": "email",
+        "maxLength": 254,
+        "nullable": true,
+        "x-sqe-cases": [
+          {
+            "label": "blank",
+            "value": "",
+            "valid": true
+          }
+        ]
+      },
+      "DueDate": {
+        "type": "string",
+        "example": "2026-12-15T12:00:00Z",
+        "format": "date-time",
+        "nullable": true,
+        "x-sqe-cases": [
+          {
+            "label": "offset",
+            "value": "2026-12-15T17:00:00+05:00",
+            "valid": true
+          },
+          {
+            "label": "invalid_calendar",
+            "value": "2026-02-31T12:00:00Z",
+            "valid": false
+          }
+        ]
+      },
+      "Attachment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "followup": {
+            "type": "integer"
+          },
+          "file": {
+            "type": "string",
+            "example": "media/attachment.txt"
+          },
+          "filename": {
+            "type": "string",
+            "example": "attachment.txt"
+          },
+          "mime_type": {
+            "type": "string",
+            "example": "text/plain"
+          },
+          "size": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      },
+      "FollowUp": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 35,
+            "readOnly": true
+          },
+          "ticket": {
+            "type": "integer",
+            "example": "$fixture:ticket",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "user": {
+            "type": "integer",
+            "example": "$fixture:assignee",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "type": "string",
+            "example": "Inspection note",
+            "nullable": true,
+            "maxLength": 200,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "example": "Triage complete",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "public": {
+            "type": "boolean",
+            "example": true,
+            "x-sqe-cases": [
+              {
+                "label": "false",
+                "value": false,
+                "valid": true
+              },
+              {
+                "label": "true_string",
+                "value": "true",
+                "valid": true
+              },
+              {
+                "label": "not_boolean",
+                "value": "maybe",
+                "valid": false
+              }
+            ]
+          },
+          "new_status": {
+            "type": "integer",
+            "example": 3,
+            "minimum": 1,
+            "maximum": 5,
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "description": "Open=1, Reopened=2, Resolved=3, Closed=4, Duplicate=5. The configured state-flow guard also applies to writes.",
+            "x-sqe-cases": [
+              {
+                "label": "numeric_string",
+                "value": "3",
+                "valid": true
+              },
+              {
+                "label": "fraction",
+                "value": 2.5,
+                "valid": false
+              },
+              {
+                "label": "boolean",
+                "value": true,
+                "valid": false
+              }
+            ],
+            "nullable": true
+          },
+          "time_spent": {
+            "type": "string",
+            "example": "00:15:00",
+            "format": "duration",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "iso",
+                "value": "PT15M",
+                "valid": true
+              },
+              {
+                "label": "zero",
+                "value": "00:00:00",
+                "valid": true
+              },
+              {
+                "label": "negative",
+                "value": "-1 23:45:00",
+                "valid": true
+              }
+            ]
+          },
+          "attachments": {
+            "type": "array",
+            "example": [
+              "$fixture:file"
+            ],
+            "items": {
+              "type": "string",
+              "example": "$fixture:file",
+              "format": "binary"
+            },
+            "x-sqe-cases": [
+              {
+                "label": "empty_list",
+                "value": [],
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-below",
+                "value": [
+                  "$fixture:empty_file"
+                ],
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": [
+                  "$fixture:one_byte_file"
+                ],
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": [
+                  "$fixture:two_byte_file"
+                ],
+                "valid": true
+              }
+            ],
+            "writeOnly": true
+          },
+          "followupattachment_set": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            },
+            "readOnly": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "message_id": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "email_recipients": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "required": [
+          "ticket"
+        ]
+      },
+      "FollowUpWrite": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 35,
+            "readOnly": true
+          },
+          "ticket": {
+            "type": "integer",
+            "example": "$fixture:ticket",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "user": {
+            "type": "integer",
+            "example": "$fixture:assignee",
+            "nullable": true,
+            "description": "Validated as an existing user when supplied. The endpoint persists the authenticated caller as author.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "type": "string",
+            "example": "Inspection note",
+            "nullable": true,
+            "maxLength": 200,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "example": "Triage complete",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ],
+            "description": "Blank is allowed. Serializer also declares null valid. A separate endpoint requirement checks that null never produces a server error."
+          },
+          "public": {
+            "type": "boolean",
+            "example": true,
+            "x-sqe-cases": [
+              {
+                "label": "false",
+                "value": false,
+                "valid": true
+              },
+              {
+                "label": "true_string",
+                "value": "true",
+                "valid": true
+              },
+              {
+                "label": "not_boolean",
+                "value": "maybe",
+                "valid": false
+              }
+            ]
+          },
+          "new_status": {
+            "type": "integer",
+            "example": 3,
+            "minimum": 1,
+            "maximum": 5,
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "description": "Open=1, Reopened=2, Resolved=3, Closed=4, Duplicate=5. The configured state-flow guard also applies to writes.",
+            "x-sqe-cases": [
+              {
+                "label": "numeric_string",
+                "value": "3",
+                "valid": true
+              },
+              {
+                "label": "fraction",
+                "value": 2.5,
+                "valid": false
+              },
+              {
+                "label": "boolean",
+                "value": true,
+                "valid": false
+              }
+            ],
+            "nullable": true
+          },
+          "time_spent": {
+            "type": "string",
+            "example": "00:15:00",
+            "format": "duration",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "iso",
+                "value": "PT15M",
+                "valid": true
+              },
+              {
+                "label": "zero",
+                "value": "00:00:00",
+                "valid": true
+              },
+              {
+                "label": "negative",
+                "value": "-1 23:45:00",
+                "valid": true
+              }
+            ]
+          },
+          "attachments": {
+            "type": "array",
+            "example": [
+              "$fixture:file"
+            ],
+            "items": {
+              "type": "string",
+              "example": "$fixture:file",
+              "format": "binary"
+            },
+            "x-sqe-cases": [
+              {
+                "label": "empty_list",
+                "value": [],
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-below",
+                "value": [
+                  "$fixture:empty_file"
+                ],
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": [
+                  "$fixture:one_byte_file"
+                ],
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": [
+                  "$fixture:two_byte_file"
+                ],
+                "valid": true
+              }
+            ],
+            "writeOnly": true
+          },
+          "followupattachment_set": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            },
+            "readOnly": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "message_id": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "email_recipients": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "required": [
+          "ticket"
+        ]
+      },
+      "Ticket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 11,
+            "readOnly": true
+          },
+          "queue": {
+            "type": "integer",
+            "example": "$fixture:queue",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "$ref": "#/components/schemas/TicketTitle"
+          },
+          "description": {
+            "type": "string",
+            "example": "A reproducible printer fault",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "resolution": {
+            "type": "string",
+            "example": "Print spool restarted",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "submitter_email": {
+            "$ref": "#/components/schemas/SubmitterEmail"
+          },
+          "assigned_to": {
+            "type": "integer",
+            "example": "$fixture:assignee",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusCode"
+          },
+          "on_hold": {
+            "type": "boolean",
+            "example": true,
+            "x-sqe-cases": [
+              {
+                "label": "false",
+                "value": false,
+                "valid": true
+              },
+              {
+                "label": "true_string",
+                "value": "true",
+                "valid": true
+              },
+              {
+                "label": "not_boolean",
+                "value": "maybe",
+                "valid": false
+              }
+            ]
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "due_date": {
+            "$ref": "#/components/schemas/DueDate"
+          },
+          "merged_to": {
+            "type": "integer",
+            "example": "$fixture:other_ticket",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "attachment": {
+            "type": "string",
+            "example": "$fixture:file",
+            "format": "binary",
+            "x-sqe-cases": [
+              {
+                "label": "BVA-file-size-below",
+                "value": "$fixture:empty_file",
+                "valid": false
+              },
+              {
+                "label": "disallowed_extension",
+                "value": "$fixture:blocked_file",
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": "$fixture:one_byte_file",
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": "$fixture:two_byte_file",
+                "valid": true
+              }
+            ],
+            "writeOnly": true
+          },
+          "followup_set": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FollowUp"
+            },
+            "readOnly": true
+          },
+          "custom_asset": {
+            "type": "string",
+            "example": "rack-07",
+            "minLength": 1,
+            "maxLength": 12,
+            "description": "Optional synthetic varchar custom field for the test profile. Production deployments can configure other custom fields."
+          }
+        },
+        "required": [
+          "queue",
+          "title"
+        ]
+      },
+      "TicketCreate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 11,
+            "readOnly": true
+          },
+          "queue": {
+            "type": "integer",
+            "example": "$fixture:queue",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "$ref": "#/components/schemas/TicketTitle"
+          },
+          "description": {
+            "type": "string",
+            "example": "A reproducible printer fault",
+            "minLength": 1
+          },
+          "resolution": {
+            "type": "string",
+            "example": "Print spool restarted",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ],
+            "description": "Writable serializer input; accepted values are ignored by the create form."
+          },
+          "submitter_email": {
+            "$ref": "#/components/schemas/SubmitterEmail"
+          },
+          "assigned_to": {
+            "type": "integer",
+            "example": "$fixture:assignee",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "status": {
+            "type": "integer",
+            "example": 3,
+            "minimum": 1,
+            "maximum": 5,
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "description": "Validated when supplied. Intake always persists Open.",
+            "x-sqe-cases": [
+              {
+                "label": "numeric_string",
+                "value": "3",
+                "valid": true
+              },
+              {
+                "label": "fraction",
+                "value": 2.5,
+                "valid": false
+              },
+              {
+                "label": "boolean",
+                "value": true,
+                "valid": false
+              }
+            ]
+          },
+          "on_hold": {
+            "type": "boolean",
+            "example": true,
+            "x-sqe-cases": [
+              {
+                "label": "false",
+                "value": false,
+                "valid": true
+              },
+              {
+                "label": "true_string",
+                "value": "true",
+                "valid": true
+              },
+              {
+                "label": "not_boolean",
+                "value": "maybe",
+                "valid": false
+              }
+            ],
+            "description": "Writable serializer input; accepted values are ignored by the create form."
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "due_date": {
+            "$ref": "#/components/schemas/DueDate"
+          },
+          "merged_to": {
+            "type": "integer",
+            "example": "$fixture:other_ticket",
+            "nullable": true,
+            "description": "Writable serializer input; accepted values are ignored by the create form.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "attachment": {
+            "type": "string",
+            "example": "$fixture:file",
+            "format": "binary",
+            "x-sqe-cases": [
+              {
+                "label": "BVA-file-size-below",
+                "value": "$fixture:empty_file",
+                "valid": false
+              },
+              {
+                "label": "disallowed_extension",
+                "value": "$fixture:blocked_file",
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": "$fixture:one_byte_file",
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": "$fixture:two_byte_file",
+                "valid": true
+              }
+            ],
+            "writeOnly": true
+          },
+          "followup_set": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FollowUp"
+            },
+            "readOnly": true
+          },
+          "custom_asset": {
+            "type": "string",
+            "example": "rack-07",
+            "minLength": 1,
+            "maxLength": 12,
+            "description": "Optional synthetic varchar custom field for the test profile. Production deployments can configure other custom fields."
+          }
+        },
+        "required": [
+          "queue",
+          "title",
+          "description",
+          "priority"
+        ]
+      },
+      "TicketReplace": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 11,
+            "readOnly": true
+          },
+          "queue": {
+            "type": "integer",
+            "example": "$fixture:queue",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "$ref": "#/components/schemas/TicketTitle"
+          },
+          "description": {
+            "type": "string",
+            "example": "A reproducible printer fault",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "resolution": {
+            "type": "string",
+            "example": "Print spool restarted",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "submitter_email": {
+            "$ref": "#/components/schemas/SubmitterEmail"
+          },
+          "assigned_to": {
+            "type": "integer",
+            "example": "$fixture:assignee",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusCode"
+          },
+          "on_hold": {
+            "type": "boolean",
+            "example": true,
+            "x-sqe-cases": [
+              {
+                "label": "false",
+                "value": false,
+                "valid": true
+              },
+              {
+                "label": "true_string",
+                "value": "true",
+                "valid": true
+              },
+              {
+                "label": "not_boolean",
+                "value": "maybe",
+                "valid": false
+              }
+            ]
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "due_date": {
+            "$ref": "#/components/schemas/DueDate"
+          },
+          "merged_to": {
+            "type": "integer",
+            "example": "$fixture:other_ticket",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "attachment": {
+            "type": "string",
+            "example": "$fixture:file",
+            "format": "binary",
+            "x-sqe-cases": [
+              {
+                "label": "BVA-file-size-below",
+                "value": "$fixture:empty_file",
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": "$fixture:one_byte_file",
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": "$fixture:two_byte_file",
+                "valid": true
+              }
+            ],
+            "writeOnly": true,
+            "description": "Validated as a file. This update path does not persist an attachment."
+          },
+          "followup_set": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FollowUp"
+            },
+            "readOnly": true
+          },
+          "custom_asset": {
+            "type": "string",
+            "example": "rack-07",
+            "minLength": 1,
+            "maxLength": 12,
+            "description": "Optional synthetic varchar custom field for the test profile. Production deployments can configure other custom fields."
+          }
+        },
+        "required": [
+          "queue",
+          "title"
+        ]
+      },
+      "TicketPatch": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 11,
+            "readOnly": true
+          },
+          "queue": {
+            "type": "integer",
+            "example": "$fixture:queue",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "$ref": "#/components/schemas/TicketTitle"
+          },
+          "description": {
+            "type": "string",
+            "example": "A reproducible printer fault",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "resolution": {
+            "type": "string",
+            "example": "Print spool restarted",
+            "nullable": true,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          },
+          "submitter_email": {
+            "$ref": "#/components/schemas/SubmitterEmail"
+          },
+          "assigned_to": {
+            "type": "integer",
+            "example": "$fixture:assignee",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusCode"
+          },
+          "on_hold": {
+            "type": "boolean",
+            "example": true,
+            "x-sqe-cases": [
+              {
+                "label": "false",
+                "value": false,
+                "valid": true
+              },
+              {
+                "label": "true_string",
+                "value": "true",
+                "valid": true
+              },
+              {
+                "label": "not_boolean",
+                "value": "maybe",
+                "valid": false
+              }
+            ]
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "due_date": {
+            "$ref": "#/components/schemas/DueDate"
+          },
+          "merged_to": {
+            "type": "integer",
+            "example": "$fixture:other_ticket",
+            "nullable": true,
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "attachment": {
+            "type": "string",
+            "example": "$fixture:file",
+            "format": "binary",
+            "x-sqe-cases": [
+              {
+                "label": "BVA-file-size-below",
+                "value": "$fixture:empty_file",
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": "$fixture:one_byte_file",
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": "$fixture:two_byte_file",
+                "valid": true
+              }
+            ],
+            "writeOnly": true,
+            "description": "Validated as a file. This update path does not persist an attachment."
+          },
+          "followup_set": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FollowUp"
+            },
+            "readOnly": true
+          },
+          "custom_asset": {
+            "type": "string",
+            "example": "rack-07",
+            "minLength": 1,
+            "maxLength": 12,
+            "description": "Optional synthetic varchar custom field for the test profile. Production deployments can configure other custom fields."
+          }
+        }
+      },
+      "CustomerTicket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ticket": {
+            "type": "string",
+            "example": "1 support-1"
+          },
+          "title": {
+            "$ref": "#/components/schemas/TicketTitle"
+          },
+          "queue": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string",
+                "example": "SQE Support"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "example": "Open"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "due_date": {
+            "$ref": "#/components/schemas/DueDate"
+          },
+          "submitter": {
+            "$ref": "#/components/schemas/SubmitterEmail"
+          },
+          "kbitem": {
+            "type": "string",
+            "example": ""
+          },
+          "secret_key": {
+            "type": "string",
+            "description": "Opaque existing public-ticket lookup key. Staff-only history is not included."
+          },
+          "custom_asset": {
+            "type": "string",
+            "example": "rack-07",
+            "minLength": 1,
+            "maxLength": 12,
+            "description": "Optional synthetic varchar custom field for the test profile. Production deployments can configure other custom fields."
+          }
+        }
+      },
+      "TicketPage": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next": {
+            "type": "string",
+            "nullable": true
+          },
+          "previous": {
+            "type": "string",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ticket"
+            }
+          }
+        },
+        "required": [
+          "count",
+          "next",
+          "previous",
+          "results"
+        ]
+      },
+      "FollowUpPage": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next": {
+            "type": "string",
+            "nullable": true
+          },
+          "previous": {
+            "type": "string",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FollowUp"
+            }
+          }
+        },
+        "required": [
+          "count",
+          "next",
+          "previous",
+          "results"
+        ]
+      },
+      "CustomerTicketPage": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next": {
+            "type": "string",
+            "nullable": true
+          },
+          "previous": {
+            "type": "string",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerTicket"
+            }
+          }
+        },
+        "required": [
+          "count",
+          "next",
+          "previous",
+          "results"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "description": "DRF error detail and/or per-field messages.",
+        "additionalProperties": true
+      },
+      "PublicSubmission": {
+        "type": "object",
+        "properties": {
+          "queue": {
+            "type": "integer",
+            "example": "$fixture:queue",
+            "description": "ID of an existing object permitted in the current request.",
+            "x-sqe-cases": [
+              {
+                "label": "absent_record",
+                "value": 99999,
+                "valid": false
+              },
+              {
+                "label": "malformed",
+                "value": "unknown",
+                "valid": false
+              },
+              {
+                "label": "noninteger",
+                "value": 1.5,
+                "valid": false
+              }
+            ]
+          },
+          "title": {
+            "$ref": "#/components/schemas/TicketTitle"
+          },
+          "body": {
+            "type": "string",
+            "example": "A customer printer fault",
+            "minLength": 1
+          },
+          "submitter_email": {
+            "type": "string",
+            "example": "customer@example.test",
+            "format": "email",
+            "maxLength": 320
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "due_date": {
+            "type": "string",
+            "example": "2026-12-15T12:00:00Z",
+            "format": "date-time",
+            "nullable": false,
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              },
+              {
+                "label": "day_first",
+                "value": "15/12/2026",
+                "valid": true
+              },
+              {
+                "label": "invalid_calendar",
+                "value": "31/02/2026",
+                "valid": false
+              }
+            ]
+          },
+          "attachment": {
+            "type": "string",
+            "example": "$fixture:file",
+            "format": "binary",
+            "x-sqe-cases": [
+              {
+                "label": "BVA-file-size-below",
+                "value": "$fixture:empty_file",
+                "valid": false
+              },
+              {
+                "label": "disallowed_extension",
+                "value": "$fixture:blocked_file",
+                "valid": false
+              },
+              {
+                "label": "BVA-file-size-at",
+                "value": "$fixture:one_byte_file",
+                "valid": true
+              },
+              {
+                "label": "BVA-file-size-above",
+                "value": "$fixture:two_byte_file",
+                "valid": true
+              }
+            ]
+          },
+          "custom_asset": {
+            "type": "string",
+            "example": "rack-07",
+            "maxLength": 12,
+            "description": "Optional synthetic varchar custom field for the test profile. Production deployments can configure other custom fields.",
+            "x-sqe-cases": [
+              {
+                "label": "blank",
+                "value": "",
+                "valid": true
+              }
+            ]
+          }
+        },
+        "required": [
+          "queue",
+          "title",
+          "body",
+          "submitter_email",
+          "priority"
+        ]
+      }
+    },
+    "parameters": {
+      "Id": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "example": 1,
+          "minimum": 1,
+          "x-sqe-cases": [
+            {
+              "label": "nonexistent",
+              "value": 99999,
+              "valid": false,
+              "status": 404
+            },
+            {
+              "label": "malformed",
+              "value": "unknown",
+              "valid": false,
+              "status": 404
+            }
+          ]
+        }
+      },
+      "Page": {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "1",
+          "description": "One-based page number or last. Out of range returns 404.",
+          "x-sqe-cases": [
+            {
+              "label": "last",
+              "value": "last",
+              "valid": true,
+              "status": 200
+            },
+            {
+              "label": "below",
+              "value": 0,
+              "valid": false,
+              "status": 404
+            },
+            {
+              "label": "at",
+              "value": 1,
+              "valid": true,
+              "status": 200
+            },
+            {
+              "label": "above",
+              "value": 2,
+              "valid": true,
+              "status": 200
+            },
+            {
+              "label": "past_last",
+              "value": 3,
+              "valid": false,
+              "status": 404
+            },
+            {
+              "label": "malformed",
+              "value": "unknown",
+              "valid": false,
+              "status": 404
+            },
+            {
+              "label": "blank",
+              "value": "",
+              "valid": true,
+              "status": 200
+            }
+          ],
+          "x-sqe-explicit": true
+        }
+      },
+      "PageSize": {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "example": 25,
+          "minimum": 1,
+          "default": 25,
+          "description": "Nonpositive or noninteger values fall back to 25; no configured maximum.",
+          "x-sqe-cases": [
+            {
+              "label": "malformed",
+              "value": "unknown",
+              "valid": false,
+              "status": 200
+            },
+            {
+              "label": "blank",
+              "value": "",
+              "valid": false,
+              "status": 200
+            }
+          ],
+          "x-sqe-invalid-status": 200
+        }
+      },
+      "StatusFilter": {
+        "name": "status",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "1",
+          "description": "Comma-separated numeric status codes. Unknown tokens are ignored; if none match, the queryset is unfiltered.",
+          "x-sqe-cases": [
+            {
+              "label": "multiple",
+              "value": "1,3",
+              "valid": true
+            },
+            {
+              "label": "unrecognized",
+              "value": "unknown",
+              "valid": false,
+              "status": 200
+            },
+            {
+              "label": "mixed",
+              "value": "3,unknown",
+              "valid": false,
+              "status": 200
+            },
+            {
+              "label": "label",
+              "value": "Open",
+              "valid": false,
+              "status": 200
+            },
+            {
+              "label": "blank",
+              "value": "",
+              "valid": true
+            }
+          ],
+          "x-sqe-explicit": true
+        }
+      },
+      "Format": {
+        "name": "format",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "json",
+          "enum": [
+            "json",
+            "api"
+          ],
+          "description": "Renderer override. api returns the browsable HTML representation.",
+          "x-sqe-cases": [
+            {
+              "label": "unknown",
+              "value": "unknown",
+              "valid": false,
+              "status": 404
+            }
+          ],
+          "x-sqe-invalid-status": 404,
+          "x-sqe-explicit": true
+        }
+      }
+    }
+  }
+}

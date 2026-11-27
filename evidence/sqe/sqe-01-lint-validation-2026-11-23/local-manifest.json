@@ -1,0 +1,31 @@
+{
+  "revision": "5aad5301a1638817d93b0078953b2c7459c99f2e",
+  "checkout": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\sqe-pr2-lint-un0asovk\\checkout",
+  "coverage_tests": "tests/team/unit",
+  "additional_test_suites": [
+    "component",
+    "requirements",
+    "regression"
+  ],
+  "historical_characterization": "evidence/sqe/white-box-pr-prep-2026-11-23/characterization-junit.xml",
+  "unit_command": [
+    "D:\\Studies\\Software_Engineering\\Semester_05\\5_Quality_Engineering\\Project\\django-helpdesk\\.venv\\Scripts\\python.exe",
+    "-m",
+    "coverage",
+    "run",
+    "--rcfile=C:\\Users\\Administrator\\AppData\\Local\\Temp\\sqe-pr2-lint-un0asovk\\checkout\\tests\\team\\.coveragerc",
+    "--data-file=D:\\Studies\\Software_Engineering\\Semester_05\\5_Quality_Engineering\\Project\\django-helpdesk\\evidence\\sqe\\sqe-01-lint-validation-2026-11-23\\.coverage-post-fix",
+    "-m",
+    "pytest",
+    "-v",
+    "--ds=tests.test_settings",
+    "-o",
+    "junit_suite_name=sqe-unit-current",
+    "--junitxml=D:\\Studies\\Software_Engineering\\Semester_05\\5_Quality_Engineering\\Project\\django-helpdesk\\evidence\\sqe\\sqe-01-lint-validation-2026-11-23\\unit-junit.xml",
+    "tests/team/unit"
+  ],
+  "unit_exit_code": 0,
+  "unit_policy_port": "unit-policy-port.patch",
+  "coverage_config": "tests/team/.coveragerc",
+  "workflow_selector_change": "replace upstream-removed staff_member_required with the current staff wrapper and hook"
+}

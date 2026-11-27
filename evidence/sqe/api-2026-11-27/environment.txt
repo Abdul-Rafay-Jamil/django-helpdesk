@@ -1,0 +1,4 @@
+3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]
+Django 6.1.3
+DRF 3.18.3
+C:\Users\Administrator\AppData\Local\Temp\sqe-api-de9726d349ea4ccca30bf4b74251c3d2\src\helpdesk\__init__.py

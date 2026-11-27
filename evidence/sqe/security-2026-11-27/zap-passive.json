@@ -1,0 +1,1804 @@
+{
+  "version": "2.17.0",
+  "mode": "safe",
+  "recordsToScan": 0,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/img",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/icons",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/submit/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tickets",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/submit",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/init_due_date.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/init_datetime_classes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/tickets/submit/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/images",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/view/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/view",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/2/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/2",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-regular-400.woff2",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/tickets/2/update/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/2/update",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/2/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/3/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/3",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/login/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/login",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/view/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/view/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/view/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/5/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/5",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-regular-400.woff2",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/tickets/5/update/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/5/update",
+      "status": 0
+    },
+    {
+      "method": "GET",
+      "path": "/tickets/5/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-regular-400.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/view/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/view/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/color-modes.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/sb-admin.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/js/sb-admin.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-extend.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/css/helpdesk-customize.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2",
+      "status": 200
+    }
+  ],
+  "alerts": [
+    {
+      "pluginId": "10112",
+      "alert": "Session Management Response Identified",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "1",
+      "cweid": "-1",
+      "path": "/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "3",
+      "cweid": "497",
+      "path": "/static/helpdesk/js/color-modes.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "4",
+      "cweid": "497",
+      "path": "/static/helpdesk/css/helpdesk-extend.css"
+    },
+    {
+      "pluginId": "10027",
+      "alert": "Information Disclosure - Suspicious Comments",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "11",
+      "cweid": "615",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "3",
+      "cweid": "693",
+      "path": "/static/helpdesk/js/color-modes.js"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "4",
+      "cweid": "693",
+      "path": "/static/helpdesk/css/helpdesk-extend.css"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "11",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js"
+    },
+    {
+      "pluginId": "10038",
+      "alert": "Content Security Policy (CSP) Header Not Set",
+      "risk": "Medium",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "1",
+      "cweid": "693",
+      "path": "/"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "11",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/bootstrap/js/bootstrap.bundle.min.js"
+    },
+    {
+      "pluginId": "10010",
+      "alert": "Cookie No HttpOnly Flag",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "1",
+      "cweid": "1004",
+      "path": "/"
+    },
+    {
+      "pluginId": "10027",
+      "alert": "Information Disclosure - Suspicious Comments",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "12",
+      "cweid": "615",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "12",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "13",
+      "cweid": "497",
+      "path": "/static/helpdesk/css/sb-admin.css"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "13",
+      "cweid": "693",
+      "path": "/static/helpdesk/css/sb-admin.css"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "12",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/jquery/jquery.min.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "1",
+      "cweid": "497",
+      "path": "/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "20",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "21",
+      "cweid": "497",
+      "path": "/static/helpdesk/css/helpdesk-customize.css"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "20",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.css"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "24",
+      "cweid": "497",
+      "path": "/static/helpdesk/js/sb-admin.js"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "24",
+      "cweid": "693",
+      "path": "/static/helpdesk/js/sb-admin.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "19",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "19",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/fontawesome-free/css/all.min.css"
+    },
+    {
+      "pluginId": "10112",
+      "alert": "Session Management Response Identified",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "35",
+      "cweid": "-1",
+      "path": "/tickets/submit/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "33",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2"
+    },
+    {
+      "pluginId": "10038",
+      "alert": "Content Security Policy (CSP) Header Not Set",
+      "risk": "Medium",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "35",
+      "cweid": "693",
+      "path": "/tickets/submit/"
+    },
+    {
+      "pluginId": "10010",
+      "alert": "Cookie No HttpOnly Flag",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "35",
+      "cweid": "1004",
+      "path": "/tickets/submit/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "15",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "33",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-solid-900.woff2"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "35",
+      "cweid": "497",
+      "path": "/tickets/submit/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "27",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "15",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/bootstrap/css/bootstrap.min.css"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "27",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/jquery-ui/jquery-ui.min.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "48",
+      "cweid": "497",
+      "path": "/static/helpdesk/js/init_due_date.js"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "48",
+      "cweid": "693",
+      "path": "/static/helpdesk/js/init_due_date.js"
+    },
+    {
+      "pluginId": "10027",
+      "alert": "Information Disclosure - Suspicious Comments",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "49",
+      "cweid": "615",
+      "path": "/static/helpdesk/js/init_datetime_classes.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "49",
+      "cweid": "497",
+      "path": "/static/helpdesk/js/init_datetime_classes.js"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "49",
+      "cweid": "693",
+      "path": "/static/helpdesk/js/init_datetime_classes.js"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "POST",
+      "messageId": "55",
+      "cweid": "497",
+      "path": "/tickets/submit/"
+    },
+    {
+      "pluginId": "10112",
+      "alert": "Session Management Response Identified",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "-1",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10038",
+      "alert": "Content Security Policy (CSP) Header Not Set",
+      "risk": "Medium",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "693",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10010",
+      "alert": "Cookie No HttpOnly Flag",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "1004",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10024",
+      "alert": "Information Disclosure - Sensitive Information in URL",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "598",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10024",
+      "alert": "Information Disclosure - Sensitive Information in URL",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "598",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "497",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "57",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10112",
+      "alert": "Session Management Response Identified",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "73",
+      "cweid": "-1",
+      "path": "/tickets/2/"
+    },
+    {
+      "pluginId": "10038",
+      "alert": "Content Security Policy (CSP) Header Not Set",
+      "risk": "Medium",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "73",
+      "cweid": "693",
+      "path": "/tickets/2/"
+    },
+    {
+      "pluginId": "10010",
+      "alert": "Cookie No HttpOnly Flag",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "73",
+      "cweid": "1004",
+      "path": "/tickets/2/"
+    },
+    {
+      "pluginId": "10109",
+      "alert": "Modern Web Application",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "73",
+      "cweid": "-1",
+      "path": "/tickets/2/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "73",
+      "cweid": "497",
+      "path": "/tickets/2/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "89",
+      "cweid": "497",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-regular-400.woff2"
+    },
+    {
+      "pluginId": "10021",
+      "alert": "X-Content-Type-Options Header Missing",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "89",
+      "cweid": "693",
+      "path": "/static/helpdesk/vendor/fontawesome-free/webfonts/fa-regular-400.woff2"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "POST",
+      "messageId": "90",
+      "cweid": "497",
+      "path": "/tickets/2/update/"
+    },
+    {
+      "pluginId": "10112",
+      "alert": "Session Management Response Identified",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "109",
+      "cweid": "-1",
+      "path": "/login/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "107",
+      "cweid": "497",
+      "path": "/tickets/3/"
+    },
+    {
+      "pluginId": "10038",
+      "alert": "Content Security Policy (CSP) Header Not Set",
+      "risk": "Medium",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "109",
+      "cweid": "693",
+      "path": "/login/"
+    },
+    {
+      "pluginId": "10010",
+      "alert": "Cookie No HttpOnly Flag",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "109",
+      "cweid": "1004",
+      "path": "/login/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "109",
+      "cweid": "497",
+      "path": "/login/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "109",
+      "cweid": "20",
+      "path": "/login/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "138",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "138",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10024",
+      "alert": "Information Disclosure - Sensitive Information in URL",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "POST",
+      "messageId": "153",
+      "cweid": "598",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10024",
+      "alert": "Information Disclosure - Sensitive Information in URL",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "POST",
+      "messageId": "153",
+      "cweid": "598",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "POST",
+      "messageId": "153",
+      "cweid": "497",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10112",
+      "alert": "Session Management Response Identified",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "169",
+      "cweid": "-1",
+      "path": "/tickets/5/"
+    },
+    {
+      "pluginId": "10038",
+      "alert": "Content Security Policy (CSP) Header Not Set",
+      "risk": "Medium",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "169",
+      "cweid": "693",
+      "path": "/tickets/5/"
+    },
+    {
+      "pluginId": "10010",
+      "alert": "Cookie No HttpOnly Flag",
+      "risk": "Low",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "169",
+      "cweid": "1004",
+      "path": "/tickets/5/"
+    },
+    {
+      "pluginId": "10109",
+      "alert": "Modern Web Application",
+      "risk": "Informational",
+      "confidence": "Medium",
+      "method": "GET",
+      "messageId": "169",
+      "cweid": "-1",
+      "path": "/tickets/5/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "GET",
+      "messageId": "169",
+      "cweid": "497",
+      "path": "/tickets/5/"
+    },
+    {
+      "pluginId": "10036",
+      "alert": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+      "risk": "Low",
+      "confidence": "High",
+      "method": "POST",
+      "messageId": "186",
+      "cweid": "497",
+      "path": "/tickets/5/update/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "204",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "204",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "219",
+      "cweid": "20",
+      "path": "/view/"
+    },
+    {
+      "pluginId": "10031",
+      "alert": "User Controllable HTML Element Attribute (Potential XSS)",
+      "risk": "Informational",
+      "confidence": "Low",
+      "method": "GET",
+      "messageId": "219",
+      "cweid": "20",
+      "path": "/view/"
+    }
+  ]
+}

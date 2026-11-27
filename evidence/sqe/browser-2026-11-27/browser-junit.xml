@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="30" time="163.721" timestamp="2026-11-27T03:20:49.970598+05:00" hostname="Berlin"><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc01_intake[M]" file="tests\team\browser\test_ticket_journeys.py" line="142" time="16.615"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc01_intake[A1]" file="tests\team\browser\test_ticket_journeys.py" line="142" time="3.976"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc01_intake[A2]" file="tests\team\browser\test_ticket_journeys.py" line="142" time="4.817"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc01_intake[E1]" file="tests\team\browser\test_ticket_journeys.py" line="142" time="24.868"><properties><property name="chromium" value="156.0.8078.4" /><property name="required_field_feedback" value="Please fill out this field." /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc01_intake[E2]" file="tests\team\browser\test_ticket_journeys.py" line="142" time="5.650"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc02_assign[M]" file="tests\team\browser\test_ticket_journeys.py" line="227" time="4.411"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc02_assign[A1]" file="tests\team\browser\test_ticket_journeys.py" line="227" time="3.435"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc02_assign[A2]" file="tests\team\browser\test_ticket_journeys.py" line="227" time="4.091"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc02_assign[E1]" file="tests\team\browser\test_ticket_journeys.py" line="227" time="2.667"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc02_assign[E2]" file="tests\team\browser\test_ticket_journeys.py" line="227" time="3.430"><properties><property name="chromium" value="156.0.8078.4" /><property name="stale_assignee_http_status" value="500" /></properties><failure message="AssertionError: Stale assignee returns a server error&#10;assert 500 &lt; 500&#10; +  where 500 = &lt;Response url='http://localhost:51385/tickets/9/update/' request=&lt;Request url='http://localhost:51385/tickets/9/update/' method='POST'&gt;&gt;.status&#10; +    where &lt;Response url='http://localhost:51385/tickets/9/update/' request=&lt;Request url='http://localhost:51385/tickets/9/update/' method='POST'&gt;&gt; = &lt;playwright._impl._sync_base.EventInfo object at 0x0000020A113DF820&gt;.value">tests\team\browser\test_ticket_journeys.py:268: in test_uc02_assign
+    assert result.value.status &lt; 500, (
+E   AssertionError: Stale assignee returns a server error
+E   assert 500 &lt; 500
+E    +  where 500 = &lt;Response url='http://localhost:51385/tickets/9/update/' request=&lt;Request url='http://localhost:51385/tickets/9/update/' method='POST'&gt;&gt;.status
+E    +    where &lt;Response url='http://localhost:51385/tickets/9/update/' request=&lt;Request url='http://localhost:51385/tickets/9/update/' method='POST'&gt;&gt; = &lt;playwright._impl._sync_base.EventInfo object at 0x0000020A113DF820&gt;.value</failure></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc03_followup[M]" file="tests\team\browser\test_ticket_journeys.py" line="292" time="3.703"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc03_followup[A1]" file="tests\team\browser\test_ticket_journeys.py" line="292" time="3.982"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc03_followup[A2]" file="tests\team\browser\test_ticket_journeys.py" line="292" time="2.838"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc03_followup[E1]" file="tests\team\browser\test_ticket_journeys.py" line="292" time="2.068"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc03_followup[E2]" file="tests\team\browser\test_ticket_journeys.py" line="292" time="1.779"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc04_resolve[M]" file="tests\team\browser\test_ticket_journeys.py" line="342" time="4.386"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc04_resolve[A1]" file="tests\team\browser\test_ticket_journeys.py" line="342" time="4.538"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc04_resolve[A2]" file="tests\team\browser\test_ticket_journeys.py" line="342" time="3.537"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc04_resolve[E1]" file="tests\team\browser\test_ticket_journeys.py" line="342" time="2.703"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc04_resolve[E2]" file="tests\team\browser\test_ticket_journeys.py" line="342" time="3.072"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc05_close_reopen[M]" file="tests\team\browser\test_ticket_journeys.py" line="397" time="3.999"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc05_close_reopen[A1]" file="tests\team\browser\test_ticket_journeys.py" line="397" time="3.989"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc05_close_reopen[A2]" file="tests\team\browser\test_ticket_journeys.py" line="397" time="4.795"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc05_close_reopen[E1]" file="tests\team\browser\test_ticket_journeys.py" line="397" time="3.432"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc05_close_reopen[E2]" file="tests\team\browser\test_ticket_journeys.py" line="397" time="6.080"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc06_review[M]" file="tests\team\browser\test_ticket_journeys.py" line="450" time="4.139"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc06_review[A1]" file="tests\team\browser\test_ticket_journeys.py" line="450" time="6.362"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc06_review[A2]" file="tests\team\browser\test_ticket_journeys.py" line="450" time="3.760"><properties><property name="chromium" value="156.0.8078.4" /></properties></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc06_review[E1]" file="tests\team\browser\test_ticket_journeys.py" line="450" time="9.430"><properties><property name="chromium" value="156.0.8078.4" /><property name="lookup_denied_with_database_unchanged" value="True" /></properties><failure message="AssertionError: Locator expected to be visible&#10;Actual value: None&#10;Error: element(s) not found &#10;Call log:&#10;  - Expect &quot;to_be_visible&quot; get_by_text(&quot;Invalid ticket ID or e-mail address. Please try again.&quot;) with timeout 5000ms&#10;  - waiting for get_by_text(&quot;Invalid ticket ID or e-mail address. Please try again.&quot;)&#10;&#10;Aria snapshot:&#10;- navigation:&#10;  - link &quot;Logo Helpdesk&quot;:&#10;    - /url: /&#10;    - img &quot;Logo&quot;&#10;    - text: Helpdesk&#10;  - button &quot;Change language&quot;&#10;  - button &quot;Toggle Theme (light)&quot;: Toggle Theme&#10;[+19 more lines; full report in element text]">tests\team\browser\test_ticket_journeys.py:490: in test_uc06_review
+    ).to_be_visible()
+      ^^^^^^^^^^^^^^^
+E   AssertionError: Locator expected to be visible
+E   Actual value: None
+E   Error: element(s) not found 
+E   Call log:
+E     - Expect "to_be_visible" get_by_text("Invalid ticket ID or e-mail address. Please try again.") with timeout 5000ms
+E     - waiting for get_by_text("Invalid ticket ID or e-mail address. Please try again.")
+E   
+E   Aria snapshot:
+E   - navigation:
+E     - link "Logo Helpdesk":
+E       - /url: /
+E       - img "Logo"
+E       - text: Helpdesk
+E     - button "Change language"
+E     - button "Toggle Theme (light)": Toggle Theme
+E     - list:
+E       - text: browser-customer
+E       - listitem:
+E         - button "Logout"
+E   - navigation "breadcrumb":
+E     - list
+E   - heading "Search your ticket" [level=1]
+E   - text: Ticket
+E   - textbox
+E   - text: Your E-mail Address
+E   - textbox
+E   - link "Cancel":
+E     - /url: /
+E   - button "Search"
+E   - contentinfo:
+E     - paragraph:
+E       - text: Powered by
+E       - link "django-helpdesk":
+E         - /url: https://github.com/django-helpdesk/django-helpdesk</failure></testcase><testcase classname="tests.team.browser.test_ticket_journeys" name="test_uc06_review[E2]" file="tests\team\browser\test_ticket_journeys.py" line="450" time="9.609"><properties><property name="chromium" value="156.0.8078.4" /><property name="lookup_denied_with_database_unchanged" value="True" /></properties><failure message="AssertionError: Locator expected to be visible&#10;Actual value: None&#10;Error: element(s) not found &#10;Call log:&#10;  - Expect &quot;to_be_visible&quot; get_by_text(&quot;Invalid ticket ID or e-mail address. Please try again.&quot;) with timeout 5000ms&#10;  - waiting for get_by_text(&quot;Invalid ticket ID or e-mail address. Please try again.&quot;)&#10;&#10;Aria snapshot:&#10;- navigation:&#10;  - link &quot;Logo Helpdesk&quot;:&#10;    - /url: /&#10;    - img &quot;Logo&quot;&#10;    - text: Helpdesk&#10;  - button &quot;Change language&quot;&#10;  - button &quot;Toggle Theme (light)&quot;: Toggle Theme&#10;[+19 more lines; full report in element text]">tests\team\browser\test_ticket_journeys.py:490: in test_uc06_review
+    ).to_be_visible()
+      ^^^^^^^^^^^^^^^
+E   AssertionError: Locator expected to be visible
+E   Actual value: None
+E   Error: element(s) not found 
+E   Call log:
+E     - Expect "to_be_visible" get_by_text("Invalid ticket ID or e-mail address. Please try again.") with timeout 5000ms
+E     - waiting for get_by_text("Invalid ticket ID or e-mail address. Please try again.")
+E   
+E   Aria snapshot:
+E   - navigation:
+E     - link "Logo Helpdesk":
+E       - /url: /
+E       - img "Logo"
+E       - text: Helpdesk
+E     - button "Change language"
+E     - button "Toggle Theme (light)": Toggle Theme
+E     - list:
+E       - text: browser-outsider
+E       - listitem:
+E         - button "Logout"
+E   - navigation "breadcrumb":
+E     - list
+E   - heading "Search your ticket" [level=1]
+E   - text: Ticket
+E   - textbox
+E   - text: Your E-mail Address
+E   - textbox
+E   - link "Cancel":
+E     - /url: /
+E   - button "Search"
+E   - contentinfo:
+E     - paragraph:
+E       - text: Powered by
+E       - link "django-helpdesk":
+E         - /url: https://github.com/django-helpdesk/django-helpdesk</failure></testcase></testsuite></testsuites>
