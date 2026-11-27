@@ -1,0 +1,50 @@
+[
+  {
+    "run": "1vu-run1",
+    "vus": 1,
+    "active_vu_seconds": 64.000613,
+    "scenario_duration_seconds": 65,
+    "requests": 64,
+    "requests_per_second": 0.9746613823430194,
+    "p95_ms": 48.77737999999997,
+    "unexpected_failures": 0,
+    "unexpected_failure_pct": 0.0,
+    "passed": true
+  },
+  {
+    "run": "1vu-run2",
+    "vus": 1,
+    "active_vu_seconds": 63.998044,
+    "scenario_duration_seconds": 65,
+    "requests": 64,
+    "requests_per_second": 0.9753009900768002,
+    "p95_ms": 49.925895,
+    "unexpected_failures": 0,
+    "unexpected_failure_pct": 0.0,
+    "passed": true
+  },
+  {
+    "run": "5vu-run1",
+    "vus": 5,
+    "active_vu_seconds": 64.000335,
+    "scenario_duration_seconds": 65,
+    "requests": 320,
+    "requests_per_second": 4.8547167380269824,
+    "p95_ms": 46.71164000000002,
+    "unexpected_failures": 0,
+    "unexpected_failure_pct": 0.0,
+    "passed": true
+  },
+  {
+    "run": "5vu-run2",
+    "vus": 5,
+    "active_vu_seconds": 64.00214,
+    "scenario_duration_seconds": 65,
+    "requests": 310,
+    "requests_per_second": 4.726515755676369,
+    "p95_ms": 86.31171500000005,
+    "unexpected_failures": 0,
+    "unexpected_failure_pct": 0.0,
+    "passed": true
+  }
+]

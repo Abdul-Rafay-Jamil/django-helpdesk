@@ -1,0 +1,38 @@
+{
+  "pass": {
+    "pr": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/pull/5",
+    "number": 5,
+    "tested_sha": "27d2f403a86ff318eec57c69b1d33c6d2b66535b",
+    "head_sha": "bec9c208546c127e0a36c344779113e9b4c8b601",
+    "run": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45893849069",
+    "run_id": 45893849069,
+    "jobs": [
+      "SQE Coverage Gate",
+      "SQE SonarQube Gate",
+      "SQE Quality Deployment Authorization"
+    ],
+    "results": {
+      "SQE Coverage Gate": "success",
+      "SQE SonarQube Gate": "success",
+      "SQE Quality Deployment Authorization": "success"
+    }
+  },
+  "fail": {
+    "pr": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/pull/6",
+    "number": 6,
+    "tested_sha": "f21d7c200fe6d8e0a16149d86265b8805ef32926",
+    "head_sha": "a6c40fbb5e35ae20900387000a1bbdeb75d3a123",
+    "run": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45893849364",
+    "run_id": 45893849364,
+    "jobs": [
+      "SQE Coverage Gate",
+      "SQE SonarQube Gate",
+      "SQE Quality Deployment Authorization"
+    ],
+    "results": {
+      "SQE Coverage Gate": "failure",
+      "SQE SonarQube Gate": "failure",
+      "SQE Quality Deployment Authorization": "skipped"
+    }
+  }
+}

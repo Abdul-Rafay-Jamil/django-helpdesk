@@ -1,0 +1,8 @@
+primary_category,count,percent,cumulative_percent
+Semantic markup,6,31.5789,31.5789
+Input validation,5,26.3158,57.8947
+Request design,2,10.5263,68.4211
+State policy,2,10.5263,78.9474
+Visual styling,2,10.5263,89.4737
+Error feedback,1,5.2632,94.7368
+Response configuration,1,5.2632,100.0000

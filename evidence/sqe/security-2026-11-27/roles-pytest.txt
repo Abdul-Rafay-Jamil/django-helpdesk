@@ -1,0 +1,63 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0 -- D:\Studies\Software_Engineering\Semester_05\5_Quality_Engineering\Project\django-helpdesk\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+django: version: 6.1.3, settings: tests.test_settings (from option)
+rootdir: C:\Users\Administrator\AppData\Local\Temp\sqe-security-047914a3549c474d9e398ea99e288e12
+configfile: pyproject.toml
+plugins: Faker-40.63.0, django-4.14.0
+collecting ... collected 7 items
+
+tests/team/browser/test_ticket_journeys.py::test_uc01_intake[M] PASSED   [ 14%]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[M] PASSED   [ 28%]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[E1] PASSED  [ 42%]
+tests/team/browser/test_ticket_journeys.py::test_uc03_followup[A2] PASSED [ 57%]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[M] PASSED  [ 71%]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[E1] PASSED [ 85%]
+tests/team/browser/test_ticket_journeys.py::test_uc06_review[M] PASSED   [100%]
+
+============================== warnings summary ===============================
+tests/team/browser/test_ticket_journeys.py::test_uc01_intake[M]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[M]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[E1]
+tests/team/browser/test_ticket_journeys.py::test_uc03_followup[A2]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[M]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[E1]
+tests/team/browser/test_ticket_journeys.py::test_uc06_review[M]
+  D:\Studies\Software_Engineering\Semester_05\5_Quality_Engineering\Project\django-helpdesk\.venv\Lib\site-packages\pytest_django\fixtures.py:580: RemovedInDjango2028Warning: The EMAIL_BACKEND setting is deprecated. Migrate to MAILERS before Django 2028.
+    override.enable()
+
+tests/team/browser/test_ticket_journeys.py::test_uc01_intake[M]
+  tests\team\browser\test_ticket_journeys.py:143: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.parametrize("flow", FLOWS)
+
+tests/team/browser/test_ticket_journeys.py::test_uc01_intake[M]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[M]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[E1]
+tests/team/browser/test_ticket_journeys.py::test_uc03_followup[A2]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[M]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[E1]
+tests/team/browser/test_ticket_journeys.py::test_uc06_review[M]
+  D:\Studies\Software_Engineering\Semester_05\5_Quality_Engineering\Project\django-helpdesk\.venv\Lib\site-packages\pytest_django\fixtures.py:590: RemovedInDjango2028Warning: The EMAIL_BACKEND setting is deprecated. Migrate to MAILERS before Django 2028.
+    override.disable()
+
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[M]
+tests/team/browser/test_ticket_journeys.py::test_uc02_assign[E1]
+  tests\team\browser\test_ticket_journeys.py:228: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.parametrize("flow", FLOWS)
+
+tests/team/browser/test_ticket_journeys.py::test_uc03_followup[A2]
+  tests\team\browser\test_ticket_journeys.py:293: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.parametrize("flow", FLOWS)
+
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[M]
+tests/team/browser/test_ticket_journeys.py::test_uc04_resolve[E1]
+  tests\team\browser\test_ticket_journeys.py:343: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.parametrize("flow", FLOWS)
+
+tests/team/browser/test_ticket_journeys.py::test_uc06_review[M]
+  tests\team\browser\test_ticket_journeys.py:451: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.parametrize("flow", FLOWS)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: D:\Studies\Software_Engineering\Semester_05\5_Quality_Engineering\Project\django-helpdesk\evidence\sqe\security-2026-11-27\roles-junit.xml -
+================= 7 passed, 21 warnings in 108.55s (0:01:48) ==================

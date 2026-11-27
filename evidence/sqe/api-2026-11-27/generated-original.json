@@ -1,0 +1,7348 @@
+[
+  {
+    "id": "submitPublic-body-queue-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-queue-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:queue",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-queue-EP-absent_record",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-queue-EP-malformed",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-queue-EP-noninteger",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-title-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-title-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Printer investigation",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-title-BVA-minLength-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-title-BVA-minLength-at",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-title-BVA-minLength-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-title-BVA-maxLength-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-title-BVA-maxLength-at",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-title-BVA-maxLength-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-body-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "body",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-body-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "body",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "A customer printer fault",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-body-BVA-minLength-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "body",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-body-BVA-minLength-at",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "body",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-body-BVA-minLength-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "body",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-submitter_email-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-submitter_email-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "customer@example.test",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-submitter_email-EP-invalid-format",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-an-email",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-submitter_email-BVA-maxLength-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-submitter_email-BVA-maxLength-at",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-submitter_email-BVA-maxLength-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbb.co",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-priority-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-priority-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-priority-EP-enum-1",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-priority-EP-enum-2",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-priority-EP-enum-4",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-priority-EP-enum-5",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-priority-BVA-minimum-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-priority-BVA-maximum-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-priority-EP-numeric_string",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-priority-EP-fraction",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-priority-EP-boolean",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-due_date-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-due_date-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T12:00:00Z",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-due_date-EP-invalid-format",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-date",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-due_date-EP-blank",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-due_date-EP-day_first",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-day_first"
+    ],
+    "omitted": false,
+    "value": "15/12/2026",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-due_date-EP-invalid_calendar",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid_calendar"
+    ],
+    "omitted": false,
+    "value": "31/02/2026",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-attachment-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-attachment-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-attachment-EP-invalid-format",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-attachment-BVA-file-size-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-below"
+    ],
+    "omitted": false,
+    "value": "$fixture:empty_file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-attachment-EP-disallowed_extension",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-disallowed_extension"
+    ],
+    "omitted": false,
+    "value": "$fixture:blocked_file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-attachment-BVA-file-size-at",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-at"
+    ],
+    "omitted": false,
+    "value": "$fixture:one_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-attachment-BVA-file-size-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-above"
+    ],
+    "omitted": false,
+    "value": "$fixture:two_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-custom_asset-EP-omitted",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-custom_asset-EP-valid",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "rack-07",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-custom_asset-BVA-maxLength-below",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-custom_asset-BVA-maxLength-at",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "submitPublic-body-custom_asset-BVA-maxLength-above",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "submitPublic-body-custom_asset-EP-blank",
+    "operation": "submitPublic",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-page-EP-omitted",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-page-EP-last",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-last"
+    ],
+    "omitted": false,
+    "value": "last",
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-page-BVA-page-below",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listTickets-query-page-BVA-page-at",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-page-BVA-page-above",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-page-EP-past_last",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-past_last"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listTickets-query-page-EP-malformed",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listTickets-query-page-EP-blank",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-page_size-EP-omitted",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-page_size-EP-valid",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": 25,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-page_size-BVA-minimum-below",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-page_size-BVA-minimum-at",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-page_size-BVA-minimum-above",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-page_size-EP-malformed",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-page_size-EP-blank",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-status-EP-omitted",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-status-EP-multiple",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-multiple"
+    ],
+    "omitted": false,
+    "value": "1,3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-status-EP-unrecognized",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-unrecognized"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-status-EP-mixed",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-mixed"
+    ],
+    "omitted": false,
+    "value": "3,unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-status-EP-label",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-label"
+    ],
+    "omitted": false,
+    "value": "Open",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listTickets-query-status-EP-blank",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-format-EP-omitted",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listTickets-query-format-EP-unknown",
+    "operation": "listTickets",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-unknown"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "createTicket-body-id-EP-read-only-ignored",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "id",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": 11,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-queue-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-queue-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:queue",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-queue-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-queue-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-queue-EP-absent_record",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-queue-EP-malformed",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-queue-EP-noninteger",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-title-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-title-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Printer investigation",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-title-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-title-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-title-BVA-minLength-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-title-BVA-minLength-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-title-BVA-minLength-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-title-BVA-maxLength-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-title-BVA-maxLength-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-title-BVA-maxLength-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-description-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-description-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "A reproducible printer fault",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-description-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-description-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-description-BVA-minLength-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-description-BVA-minLength-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-description-BVA-minLength-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-resolution-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-resolution-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Print spool restarted",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-resolution-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-resolution-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-resolution-EP-blank",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-submitter_email-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-submitter_email-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "watcher@example.test",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-submitter_email-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-submitter_email-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-submitter_email-EP-invalid-format",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-an-email",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-submitter_email-BVA-maxLength-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-submitter_email-BVA-maxLength-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-submitter_email-BVA-maxLength-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbb.co",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-submitter_email-EP-blank",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:assignee",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-absent_record",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-malformed",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-assigned_to-EP-noninteger",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-status-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-status-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-status-EP-enum-1",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-EP-enum-2",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-EP-enum-4",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-EP-enum-5",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-BVA-minimum-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-status-BVA-maximum-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-status-EP-numeric_string",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-status-EP-fraction",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-status-EP-boolean",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-false",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-false"
+    ],
+    "omitted": false,
+    "value": false,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-true_string",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-true_string"
+    ],
+    "omitted": false,
+    "value": "true",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-on_hold-EP-not_boolean",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-not_boolean"
+    ],
+    "omitted": false,
+    "value": "maybe",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-priority-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-EP-enum-1",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-priority-EP-enum-2",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-priority-EP-enum-4",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-priority-EP-enum-5",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-priority-BVA-minimum-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-BVA-maximum-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-EP-numeric_string",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-priority-EP-fraction",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-priority-EP-boolean",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-due_date-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-due_date-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T12:00:00Z",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-due_date-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-due_date-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-due_date-EP-invalid-format",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-date",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-due_date-EP-offset",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-offset"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T17:00:00+05:00",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-due_date-EP-invalid_calendar",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid_calendar"
+    ],
+    "omitted": false,
+    "value": "2026-02-31T12:00:00Z",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:other_ticket",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-absent_record",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-malformed",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-merged_to-EP-noninteger",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-attachment-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-attachment-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-attachment-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-attachment-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-attachment-EP-invalid-format",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-attachment-BVA-file-size-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-below"
+    ],
+    "omitted": false,
+    "value": "$fixture:empty_file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-attachment-EP-disallowed_extension",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-disallowed_extension"
+    ],
+    "omitted": false,
+    "value": "$fixture:blocked_file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-attachment-BVA-file-size-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-at"
+    ],
+    "omitted": false,
+    "value": "$fixture:one_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-attachment-BVA-file-size-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-above"
+    ],
+    "omitted": false,
+    "value": "$fixture:two_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-followup_set-EP-read-only-ignored",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "followup_set",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-EP-omitted",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-EP-valid",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "rack-07",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-EP-null",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-custom_asset-EP-wrong-type",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-custom_asset-BVA-minLength-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createTicket-body-custom_asset-BVA-minLength-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-BVA-minLength-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-BVA-maxLength-below",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-BVA-maxLength-at",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createTicket-body-custom_asset-BVA-maxLength-above",
+    "operation": "createTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "getTicket-path-id-EP-valid",
+    "operation": "getTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-valid",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getTicket-path-id-BVA-minimum-below",
+    "operation": "getTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getTicket-path-id-BVA-minimum-above",
+    "operation": "getTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getTicket-path-id-EP-nonexistent",
+    "operation": "getTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-nonexistent"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getTicket-path-id-EP-malformed",
+    "operation": "getTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getTicket-query-status-EP-omitted",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getTicket-query-status-EP-multiple",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-multiple"
+    ],
+    "omitted": false,
+    "value": "1,3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getTicket-query-status-EP-unrecognized",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-unrecognized"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "getTicket-query-status-EP-mixed",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-mixed"
+    ],
+    "omitted": false,
+    "value": "3,unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "getTicket-query-status-EP-label",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-label"
+    ],
+    "omitted": false,
+    "value": "Open",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "getTicket-query-status-EP-blank",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getTicket-query-format-EP-omitted",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getTicket-query-format-EP-unknown",
+    "operation": "getTicket",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-unknown"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "patchTicket-path-id-EP-valid",
+    "operation": "patchTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-valid",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-path-id-BVA-minimum-below",
+    "operation": "patchTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "patchTicket-path-id-BVA-minimum-above",
+    "operation": "patchTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-path-id-EP-nonexistent",
+    "operation": "patchTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-nonexistent"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "patchTicket-path-id-EP-malformed",
+    "operation": "patchTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "patchTicket-query-status-EP-omitted",
+    "operation": "patchTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-query-status-EP-multiple",
+    "operation": "patchTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-multiple"
+    ],
+    "omitted": false,
+    "value": "1,3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-query-status-EP-unrecognized",
+    "operation": "patchTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-unrecognized"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "patchTicket-query-status-EP-mixed",
+    "operation": "patchTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-mixed"
+    ],
+    "omitted": false,
+    "value": "3,unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "patchTicket-query-status-EP-label",
+    "operation": "patchTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-label"
+    ],
+    "omitted": false,
+    "value": "Open",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "patchTicket-query-status-EP-blank",
+    "operation": "patchTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-id-EP-read-only-ignored",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "id",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": 11,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-queue-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-queue-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:queue",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-queue-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-queue-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-queue-EP-absent_record",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-queue-EP-malformed",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-queue-EP-noninteger",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-title-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-title-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Printer investigation",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-title-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-title-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-title-BVA-minLength-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-title-BVA-minLength-at",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-title-BVA-minLength-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-title-BVA-maxLength-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-title-BVA-maxLength-at",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-title-BVA-maxLength-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-description-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-description-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "A reproducible printer fault",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-description-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-description-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-description-EP-blank",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-resolution-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-resolution-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Print spool restarted",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-resolution-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-resolution-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-resolution-EP-blank",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-submitter_email-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-submitter_email-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "watcher@example.test",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-submitter_email-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-submitter_email-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-submitter_email-EP-invalid-format",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-an-email",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-submitter_email-BVA-maxLength-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-submitter_email-BVA-maxLength-at",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-submitter_email-BVA-maxLength-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbb.co",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-submitter_email-EP-blank",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:assignee",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-absent_record",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-malformed",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-assigned_to-EP-noninteger",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-status-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-status-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-status-EP-enum-1",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-EP-enum-2",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-EP-enum-4",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-EP-enum-5",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-BVA-minimum-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-status-BVA-maximum-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-status-EP-numeric_string",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-status-EP-fraction",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-status-EP-boolean",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-false",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-false"
+    ],
+    "omitted": false,
+    "value": false,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-true_string",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-true_string"
+    ],
+    "omitted": false,
+    "value": "true",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-on_hold-EP-not_boolean",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-not_boolean"
+    ],
+    "omitted": false,
+    "value": "maybe",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-priority-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-priority-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-priority-EP-enum-1",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-EP-enum-2",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-EP-enum-4",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-EP-enum-5",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-BVA-minimum-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-priority-BVA-maximum-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-priority-EP-numeric_string",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-priority-EP-fraction",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-priority-EP-boolean",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T12:00:00Z",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-invalid-format",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-date",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-offset",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-offset"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T17:00:00+05:00",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-due_date-EP-invalid_calendar",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid_calendar"
+    ],
+    "omitted": false,
+    "value": "2026-02-31T12:00:00Z",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:other_ticket",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-absent_record",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-malformed",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-merged_to-EP-noninteger",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-attachment-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-attachment-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-attachment-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-attachment-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-attachment-EP-invalid-format",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-attachment-BVA-file-size-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-below"
+    ],
+    "omitted": false,
+    "value": "$fixture:empty_file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-attachment-BVA-file-size-at",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-at"
+    ],
+    "omitted": false,
+    "value": "$fixture:one_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-attachment-BVA-file-size-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-above"
+    ],
+    "omitted": false,
+    "value": "$fixture:two_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-followup_set-EP-read-only-ignored",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "followup_set",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-EP-omitted",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-EP-valid",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "rack-07",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-EP-null",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-custom_asset-EP-wrong-type",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-custom_asset-BVA-minLength-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "patchTicket-body-custom_asset-BVA-minLength-at",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-BVA-minLength-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-BVA-maxLength-below",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-BVA-maxLength-at",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "patchTicket-body-custom_asset-BVA-maxLength-above",
+    "operation": "patchTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-path-id-EP-valid",
+    "operation": "putTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-valid",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-path-id-BVA-minimum-below",
+    "operation": "putTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "putTicket-path-id-BVA-minimum-above",
+    "operation": "putTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-path-id-EP-nonexistent",
+    "operation": "putTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-nonexistent"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "putTicket-path-id-EP-malformed",
+    "operation": "putTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "putTicket-query-status-EP-omitted",
+    "operation": "putTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-query-status-EP-multiple",
+    "operation": "putTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-multiple"
+    ],
+    "omitted": false,
+    "value": "1,3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-query-status-EP-unrecognized",
+    "operation": "putTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-unrecognized"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "putTicket-query-status-EP-mixed",
+    "operation": "putTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-mixed"
+    ],
+    "omitted": false,
+    "value": "3,unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "putTicket-query-status-EP-label",
+    "operation": "putTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-label"
+    ],
+    "omitted": false,
+    "value": "Open",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "putTicket-query-status-EP-blank",
+    "operation": "putTicket",
+    "location": "query",
+    "input": "status",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-id-EP-read-only-ignored",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "id",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": 11,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-queue-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-queue-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:queue",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-queue-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-queue-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-queue-EP-absent_record",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-queue-EP-malformed",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-queue-EP-noninteger",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "queue",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-title-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-title-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Printer investigation",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-title-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-title-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-title-BVA-minLength-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-title-BVA-minLength-at",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-title-BVA-minLength-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-title-BVA-maxLength-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-title-BVA-maxLength-at",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-title-BVA-maxLength-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-description-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-description-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "A reproducible printer fault",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-description-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-description-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-description-EP-blank",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "description",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-resolution-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-resolution-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Print spool restarted",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-resolution-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-resolution-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-resolution-EP-blank",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "resolution",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-submitter_email-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-submitter_email-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "watcher@example.test",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-submitter_email-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-submitter_email-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-submitter_email-EP-invalid-format",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-an-email",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-submitter_email-BVA-maxLength-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-submitter_email-BVA-maxLength-at",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbb.co",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-submitter_email-BVA-maxLength-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.bbbb.co",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-submitter_email-EP-blank",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "submitter_email",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:assignee",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-absent_record",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-malformed",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-assigned_to-EP-noninteger",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "assigned_to",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-status-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-status-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-status-EP-enum-1",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-EP-enum-2",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-EP-enum-4",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-EP-enum-5",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-BVA-minimum-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-status-BVA-maximum-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-status-EP-numeric_string",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-status-EP-fraction",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-status-EP-boolean",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "status",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-false",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-false"
+    ],
+    "omitted": false,
+    "value": false,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-true_string",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-true_string"
+    ],
+    "omitted": false,
+    "value": "true",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-on_hold-EP-not_boolean",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "on_hold",
+    "partitions": [
+      "EP-not_boolean"
+    ],
+    "omitted": false,
+    "value": "maybe",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-priority-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-priority-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-priority-EP-enum-1",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-EP-enum-2",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-EP-enum-4",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-EP-enum-5",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-BVA-minimum-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-priority-BVA-maximum-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-priority-EP-numeric_string",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-priority-EP-fraction",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-priority-EP-boolean",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "priority",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-due_date-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-due_date-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T12:00:00Z",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-due_date-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-due_date-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-due_date-EP-invalid-format",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-date",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-due_date-EP-offset",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-offset"
+    ],
+    "omitted": false,
+    "value": "2026-12-15T17:00:00+05:00",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-due_date-EP-invalid_calendar",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "due_date",
+    "partitions": [
+      "EP-invalid_calendar"
+    ],
+    "omitted": false,
+    "value": "2026-02-31T12:00:00Z",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:other_ticket",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-absent_record",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-malformed",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-merged_to-EP-noninteger",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "merged_to",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-attachment-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-attachment-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-attachment-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-attachment-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-attachment-EP-invalid-format",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-attachment-BVA-file-size-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-below"
+    ],
+    "omitted": false,
+    "value": "$fixture:empty_file",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-attachment-BVA-file-size-at",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-at"
+    ],
+    "omitted": false,
+    "value": "$fixture:one_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-attachment-BVA-file-size-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "attachment",
+    "partitions": [
+      "BVA-file-size-above"
+    ],
+    "omitted": false,
+    "value": "$fixture:two_byte_file",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-followup_set-EP-read-only-ignored",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "followup_set",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-EP-omitted",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-EP-valid",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "rack-07",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-EP-null",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-custom_asset-EP-wrong-type",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-custom_asset-BVA-minLength-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-below"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "putTicket-body-custom_asset-BVA-minLength-at",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-at"
+    ],
+    "omitted": false,
+    "value": "x",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-BVA-minLength-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-minLength-above"
+    ],
+    "omitted": false,
+    "value": "xx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-BVA-maxLength-below",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-BVA-maxLength-at",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "putTicket-body-custom_asset-BVA-maxLength-above",
+    "operation": "putTicket",
+    "location": "body",
+    "input": "custom_asset",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "listFollowUps-query-page-EP-omitted",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listFollowUps-query-page-EP-last",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-last"
+    ],
+    "omitted": false,
+    "value": "last",
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-page-BVA-page-below",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listFollowUps-query-page-BVA-page-at",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-page-BVA-page-above",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-page-EP-past_last",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-past_last"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listFollowUps-query-page-EP-malformed",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listFollowUps-query-page-EP-blank",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-page_size-EP-omitted",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listFollowUps-query-page_size-EP-valid",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": 25,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listFollowUps-query-page_size-BVA-minimum-below",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-page_size-BVA-minimum-at",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listFollowUps-query-page_size-BVA-minimum-above",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listFollowUps-query-page_size-EP-malformed",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-page_size-EP-blank",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listFollowUps-query-format-EP-omitted",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listFollowUps-query-format-EP-unknown",
+    "operation": "listFollowUps",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-unknown"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "createFollowUp-body-id-EP-read-only-ignored",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "id",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": 35,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:ticket",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-absent_record",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-malformed",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-ticket-EP-noninteger",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "ticket",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-user-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-user-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "$fixture:assignee",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-user-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-user-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-user-EP-absent_record",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-absent_record"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-user-EP-malformed",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-user-EP-noninteger",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "user",
+    "partitions": [
+      "EP-noninteger"
+    ],
+    "omitted": false,
+    "value": 1.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-title-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-title-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Inspection note",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-title-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-title-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-title-BVA-maxLength-below",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-below"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-title-BVA-maxLength-at",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-at"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-title-BVA-maxLength-above",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "BVA-maxLength-above"
+    ],
+    "omitted": false,
+    "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-title-EP-blank",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "title",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-comment-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "comment",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-comment-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "comment",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "Triage complete",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-comment-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "comment",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-comment-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "comment",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-comment-EP-blank",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "comment",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-public-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-public-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-public-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-public-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-public-EP-false",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-false"
+    ],
+    "omitted": false,
+    "value": false,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-public-EP-true_string",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-true_string"
+    ],
+    "omitted": false,
+    "value": "true",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-public-EP-not_boolean",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "public",
+    "partitions": [
+      "EP-not_boolean"
+    ],
+    "omitted": false,
+    "value": "maybe",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-valid",
+      "EP-enum-3"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-enum-1",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-enum-1",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-enum-2",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-enum-2",
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-enum-4",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-enum-4",
+      "BVA-maximum-below"
+    ],
+    "omitted": false,
+    "value": 4,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-enum-5",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-enum-5",
+      "BVA-maximum-at"
+    ],
+    "omitted": false,
+    "value": 5,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-BVA-minimum-below",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-new_status-BVA-maximum-above",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "BVA-maximum-above"
+    ],
+    "omitted": false,
+    "value": 6,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-numeric_string",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-numeric_string"
+    ],
+    "omitted": false,
+    "value": "3",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-fraction",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-fraction"
+    ],
+    "omitted": false,
+    "value": 2.5,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-new_status-EP-boolean",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "new_status",
+    "partitions": [
+      "EP-boolean"
+    ],
+    "omitted": false,
+    "value": true,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": "00:15:00",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-invalid-format",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-invalid-format"
+    ],
+    "omitted": false,
+    "value": "not-a-duration",
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-iso",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-iso"
+    ],
+    "omitted": false,
+    "value": "PT15M",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-zero",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-zero"
+    ],
+    "omitted": false,
+    "value": "00:00:00",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-time_spent-EP-negative",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "time_spent",
+    "partitions": [
+      "EP-negative"
+    ],
+    "omitted": false,
+    "value": "-1 23:45:00",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-attachments-EP-omitted",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-attachments-EP-valid",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": [
+      "$fixture:file"
+    ],
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-attachments-EP-null",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "EP-null"
+    ],
+    "omitted": false,
+    "value": null,
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-attachments-EP-wrong-type",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "EP-wrong-type"
+    ],
+    "omitted": false,
+    "value": {},
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-attachments-EP-empty_list",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "EP-empty_list"
+    ],
+    "omitted": false,
+    "value": [],
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-attachments-BVA-file-size-below",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "BVA-file-size-below"
+    ],
+    "omitted": false,
+    "value": [
+      "$fixture:empty_file"
+    ],
+    "valid": false,
+    "status": 400
+  },
+  {
+    "id": "createFollowUp-body-attachments-BVA-file-size-at",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "BVA-file-size-at"
+    ],
+    "omitted": false,
+    "value": [
+      "$fixture:one_byte_file"
+    ],
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-attachments-BVA-file-size-above",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "attachments",
+    "partitions": [
+      "BVA-file-size-above"
+    ],
+    "omitted": false,
+    "value": [
+      "$fixture:two_byte_file"
+    ],
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-followupattachment_set-EP-read-only-ignored",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "followupattachment_set",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-date-EP-read-only-ignored",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "date",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-message_id-EP-read-only-ignored",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "message_id",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "createFollowUp-body-email_recipients-EP-read-only-ignored",
+    "operation": "createFollowUp",
+    "location": "body",
+    "input": "email_recipients",
+    "partitions": [
+      "EP-read-only-ignored"
+    ],
+    "omitted": false,
+    "value": "read-only input",
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getFollowUp-path-id-EP-valid",
+    "operation": "getFollowUp",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-valid",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getFollowUp-path-id-BVA-minimum-below",
+    "operation": "getFollowUp",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getFollowUp-path-id-BVA-minimum-above",
+    "operation": "getFollowUp",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getFollowUp-path-id-EP-nonexistent",
+    "operation": "getFollowUp",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-nonexistent"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getFollowUp-path-id-EP-malformed",
+    "operation": "getFollowUp",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getFollowUp-query-format-EP-omitted",
+    "operation": "getFollowUp",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getFollowUp-query-format-EP-unknown",
+    "operation": "getFollowUp",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-unknown"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listCustomerTickets-query-page-EP-omitted",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listCustomerTickets-query-page-EP-last",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-last"
+    ],
+    "omitted": false,
+    "value": "last",
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-page-BVA-page-below",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listCustomerTickets-query-page-BVA-page-at",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-page-BVA-page-above",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "BVA-page-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-page-EP-past_last",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-past_last"
+    ],
+    "omitted": false,
+    "value": 3,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listCustomerTickets-query-page-EP-malformed",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "listCustomerTickets-query-page-EP-blank",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": true,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-EP-omitted",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-EP-valid",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-valid"
+    ],
+    "omitted": false,
+    "value": 25,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-BVA-minimum-below",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-BVA-minimum-at",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-BVA-minimum-above",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-EP-malformed",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-page_size-EP-blank",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "page_size",
+    "partitions": [
+      "EP-blank"
+    ],
+    "omitted": false,
+    "value": "",
+    "valid": false,
+    "status": 200
+  },
+  {
+    "id": "listCustomerTickets-query-format-EP-omitted",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "listCustomerTickets-query-format-EP-unknown",
+    "operation": "listCustomerTickets",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-unknown"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getCustomerTicket-path-id-EP-valid",
+    "operation": "getCustomerTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-valid",
+      "BVA-minimum-at"
+    ],
+    "omitted": false,
+    "value": 1,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getCustomerTicket-path-id-BVA-minimum-below",
+    "operation": "getCustomerTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-below"
+    ],
+    "omitted": false,
+    "value": 0,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getCustomerTicket-path-id-BVA-minimum-above",
+    "operation": "getCustomerTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "BVA-minimum-above"
+    ],
+    "omitted": false,
+    "value": 2,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getCustomerTicket-path-id-EP-nonexistent",
+    "operation": "getCustomerTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-nonexistent"
+    ],
+    "omitted": false,
+    "value": 99999,
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getCustomerTicket-path-id-EP-malformed",
+    "operation": "getCustomerTicket",
+    "location": "path",
+    "input": "id",
+    "partitions": [
+      "EP-malformed"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  },
+  {
+    "id": "getCustomerTicket-query-format-EP-omitted",
+    "operation": "getCustomerTicket",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-omitted"
+    ],
+    "omitted": true,
+    "value": null,
+    "valid": true,
+    "status": null
+  },
+  {
+    "id": "getCustomerTicket-query-format-EP-unknown",
+    "operation": "getCustomerTicket",
+    "location": "query",
+    "input": "format",
+    "partitions": [
+      "EP-unknown"
+    ],
+    "omitted": false,
+    "value": "unknown",
+    "valid": false,
+    "status": 404
+  }
+]

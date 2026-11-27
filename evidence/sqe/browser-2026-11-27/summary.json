@@ -1,0 +1,216 @@
+{
+  "revision": "bec9c208546c127e0a36c344779113e9b4c8b601",
+  "production_tree": "888a42a47eb00c8725fe781a26ba82280d5b19b7",
+  "chromium": "156.0.8078.4",
+  "playwright": "1.64.0",
+  "tests": 30,
+  "passed": 27,
+  "failed": 3,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 163.721,
+  "tested_file_sha256": {
+    "tests/team/browser/conftest.py": "a7d15a3bf0d53d4734f706fc1c32f8b4e3802728cfeb277cc0d997a9b89beb66",
+    "tests/team/browser/test_ticket_journeys.py": "b0f59d7e865b4ba3abca54b3de02cb1e17238986a4f8edc21b48a50ba16f322a"
+  },
+  "cases": {
+    "test_uc01_intake[M]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc01_intake[A1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc01_intake[A2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc01_intake[E1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4",
+        "required_field_feedback": "Please fill out this field."
+      }
+    },
+    "test_uc01_intake[E2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc02_assign[M]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc02_assign[A1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc02_assign[A2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc02_assign[E1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc02_assign[E2]": {
+      "result": "failed",
+      "properties": {
+        "chromium": "156.0.8078.4",
+        "stale_assignee_http_status": "500"
+      },
+      "failure": "AssertionError: Stale assignee returns a server error"
+    },
+    "test_uc03_followup[M]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc03_followup[A1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc03_followup[A2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc03_followup[E1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc03_followup[E2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc04_resolve[M]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc04_resolve[A1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc04_resolve[A2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc04_resolve[E1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc04_resolve[E2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc05_close_reopen[M]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc05_close_reopen[A1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc05_close_reopen[A2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc05_close_reopen[E1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc05_close_reopen[E2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc06_review[M]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc06_review[A1]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc06_review[A2]": {
+      "result": "passed",
+      "properties": {
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "test_uc06_review[E1]": {
+      "result": "failed",
+      "properties": {
+        "chromium": "156.0.8078.4",
+        "lookup_denied_with_database_unchanged": "True"
+      },
+      "failure": "AssertionError: Locator expected to be visible"
+    },
+    "test_uc06_review[E2]": {
+      "result": "failed",
+      "properties": {
+        "chromium": "156.0.8078.4",
+        "lookup_denied_with_database_unchanged": "True"
+      },
+      "failure": "AssertionError: Locator expected to be visible"
+    }
+  },
+  "screenshots": [
+    "UC01-E1-corrected-success.png",
+    "UC01-E1-correction-focus.png",
+    "UC01-M-keyboard-submit.png",
+    "UC04-M-resolved-confirmation.png"
+  ],
+  "traces": [
+    "test_uc02_assign-E2-trace.zip",
+    "test_uc06_review-E1-trace.zip",
+    "test_uc06_review-E2-trace.zip"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": 137746136501,
+  "name": "SQE Requirement Tests",
+  "head_sha": "5c727daa0459e2d21cbc16e0de349387ab1638e5",
+  "app_id": 15368,
+  "app_slug": "github-actions",
+  "conclusion": "failure",
+  "details_url": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45190177648/job/137746136501",
+  "counts": {
+    "tests": 77,
+    "failures": 30,
+    "errors": 0,
+    "skipped": 0
+  },
+  "matches_fork_failure_ids": true
+}

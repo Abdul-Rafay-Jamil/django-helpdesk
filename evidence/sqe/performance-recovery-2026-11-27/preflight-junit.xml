@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="6.842" timestamp="2026-11-27T10:54:22.324344+05:00" hostname="Berlin"><testcase classname="tests.team.performance.run_workload" name="test_ticket_detail_workloads" time="6.274"><failure message="AssertionError: assert 1 == 'Open'">tests\team\performance\run_workload.py:30: in test_ticket_detail_workloads
+    assert readiness.json()["status"] == "Open"
+E   AssertionError: assert 1 == 'Open'</failure></testcase></testsuite></testsuites>

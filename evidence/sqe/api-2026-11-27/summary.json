@@ -1,0 +1,141 @@
+{
+  "tested_revision": "bec9c208546c127e0a36c344779113e9b4c8b601",
+  "production_tree": "888a42a47eb00c8725fe781a26ba82280d5b19b7",
+  "api_test_directory": "tests/team/api",
+  "pytest_exit_code": 1,
+  "total": {
+    "tests": 589,
+    "failures": 14,
+    "errors": 0,
+    "skipped": 0
+  },
+  "passed": 575,
+  "generated_cases": 561,
+  "input_operation_pairs": 87,
+  "cases_with_boundary_labels": 162,
+  "generated_by_operation": {
+    "submitPublic": {
+      "passed": 53,
+      "failed": 1
+    },
+    "listTickets": {
+      "passed": 23,
+      "failed": 0
+    },
+    "createTicket": {
+      "passed": 109,
+      "failed": 4
+    },
+    "getTicket": {
+      "passed": 13,
+      "failed": 0
+    },
+    "patchTicket": {
+      "passed": 118,
+      "failed": 3
+    },
+    "putTicket": {
+      "passed": 118,
+      "failed": 3
+    },
+    "listFollowUps": {
+      "passed": 17,
+      "failed": 0
+    },
+    "createFollowUp": {
+      "passed": 65,
+      "failed": 3
+    },
+    "getFollowUp": {
+      "passed": 7,
+      "failed": 0
+    },
+    "listCustomerTickets": {
+      "passed": 17,
+      "failed": 0
+    },
+    "getCustomerTicket": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "failure_groups": {
+    "API-04": 1,
+    "API-03": 11,
+    "API-01": 1,
+    "API-02": 1
+  },
+  "failed_case_ids": [
+    {
+      "id": "submitPublic-body-attachment-EP-invalid-format",
+      "defect": "API-04",
+      "message": "AssertionError: submitPublic-body-attachment-EP-invalid-format HTTP 302 changed stored records"
+    },
+    {
+      "id": "createTicket-body-queue-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: createTicket-body-queue-EP-noninteger HTTP 201 changed stored records"
+    },
+    {
+      "id": "createTicket-body-description-EP-omitted",
+      "defect": "API-01",
+      "message": "AssertionError: createTicket-body-description-EP-omitted returned HTTP 500"
+    },
+    {
+      "id": "createTicket-body-assigned_to-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: createTicket-body-assigned_to-EP-noninteger HTTP 201 changed stored records"
+    },
+    {
+      "id": "createTicket-body-merged_to-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: createTicket-body-merged_to-EP-noninteger HTTP 201 changed stored records"
+    },
+    {
+      "id": "patchTicket-body-queue-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: patchTicket-body-queue-EP-noninteger HTTP 200 changed stored records"
+    },
+    {
+      "id": "patchTicket-body-assigned_to-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: patchTicket-body-assigned_to-EP-noninteger HTTP 200 changed stored records"
+    },
+    {
+      "id": "patchTicket-body-merged_to-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: patchTicket-body-merged_to-EP-noninteger HTTP 200 changed stored records"
+    },
+    {
+      "id": "putTicket-body-queue-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: putTicket-body-queue-EP-noninteger HTTP 200 changed stored records"
+    },
+    {
+      "id": "putTicket-body-assigned_to-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: putTicket-body-assigned_to-EP-noninteger HTTP 200 changed stored records"
+    },
+    {
+      "id": "putTicket-body-merged_to-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: putTicket-body-merged_to-EP-noninteger HTTP 200 changed stored records"
+    },
+    {
+      "id": "createFollowUp-body-ticket-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: createFollowUp-body-ticket-EP-noninteger HTTP 201 changed stored records"
+    },
+    {
+      "id": "createFollowUp-body-user-EP-noninteger",
+      "defect": "API-03",
+      "message": "AssertionError: createFollowUp-body-user-EP-noninteger HTTP 201 changed stored records"
+    },
+    {
+      "id": "createFollowUp-body-comment-EP-null",
+      "defect": "API-02",
+      "message": "AssertionError: createFollowUp-body-comment-EP-null returned HTTP 500"
+    }
+  ],
+  "integration_cases": 28
+}

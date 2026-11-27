@@ -1,0 +1,52 @@
+{
+  "pass": {
+    "pr": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/pull/3",
+    "number": 3,
+    "pr_head": "4a062339b30e99f2e05c4e460d9a993e677c6209",
+    "tested_merge_sha": "1b24bf83f8c670c5088a55e79e37f67c57884481",
+    "run": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45234921914",
+    "job": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45234921914/job/137903970344",
+    "app_id": 15368,
+    "conclusion": "success",
+    "control_passes": 249,
+    "control_requirements": 77,
+    "counts": {
+      "killed": 111,
+      "survived": 0,
+      "timeout": 0,
+      "invalid": 0
+    },
+    "raw_score": 1.0,
+    "custom_results": {
+      "sqe/IgnoreConfiguredTransitionFlow": "killed",
+      "sqe/CloseAsResolved": "killed"
+    },
+    "gate_errors": []
+  },
+  "fail": {
+    "pr": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/pull/4",
+    "number": 4,
+    "pr_head": "fbe1f0a03a0366f04627e7aff466c105b22ea976",
+    "tested_merge_sha": "b35f73cc0f666ae19b65d3219a25d8e3d8dacc96",
+    "run": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45234922021",
+    "job": "https://github.com/Abdul-Rafay-Jamil/django-helpdesk/actions/runs/45234922021/job/137903970445",
+    "app_id": 15368,
+    "conclusion": "failure",
+    "control_passes": 235,
+    "control_requirements": 77,
+    "counts": {
+      "killed": 94,
+      "survived": 17,
+      "timeout": 0,
+      "invalid": 0
+    },
+    "raw_score": 0.8468468468468469,
+    "custom_results": {
+      "sqe/IgnoreConfiguredTransitionFlow": "killed",
+      "sqe/CloseAsResolved": "killed"
+    },
+    "gate_errors": [
+      "Raw mutation score below the 95% project threshold."
+    ]
+  }
+}

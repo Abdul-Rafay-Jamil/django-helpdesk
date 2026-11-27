@@ -1,0 +1,2356 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-9.2.0, pluggy-1.7.0 -- /opt/hostedtoolcache/Python/3.14.6/x64/bin/python
+cachedir: .pytest_cache
+django: version: 6.1.3, settings: tests.test_settings (from option)
+rootdir: /home/runner/work/django-helpdesk/django-helpdesk
+configfile: pyproject.toml
+plugins: django-4.14.0
+collecting ... collected 77 items
+
+tests/team/requirements/test_closed_transition.py::test_closed_to_resolved_is_rejected_without_a_write[staff-form] FAILED [  1%]
+tests/team/requirements/test_closed_transition.py::test_closed_to_resolved_is_rejected_without_a_write[ticket-api] FAILED [  2%]
+tests/team/requirements/test_staff_detail_close.py::test_staff_detail_close_persists_allowed_closed_transition[unassigned] PASSED [  3%]
+tests/team/requirements/test_staff_detail_close.py::test_staff_detail_close_persists_allowed_closed_transition[assigned] PASSED [  5%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Open-Open] PASSED [  6%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Open-Reopened] FAILED [  7%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Open-Resolved] PASSED [  9%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Open-Closed] PASSED [ 10%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Open-Duplicate] PASSED [ 11%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Reopened-Open] FAILED [ 12%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Reopened-Reopened] PASSED [ 14%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Reopened-Resolved] PASSED [ 15%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Reopened-Closed] PASSED [ 16%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Reopened-Duplicate] PASSED [ 18%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Open] FAILED [ 19%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Reopened] PASSED [ 20%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Resolved] PASSED [ 22%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Closed] PASSED [ 23%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Duplicate] FAILED [ 24%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Closed-Open] FAILED [ 25%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Closed-Reopened] PASSED [ 27%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Closed-Closed] PASSED [ 28%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Closed-Duplicate] FAILED [ 29%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Open] FAILED [ 31%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Reopened] PASSED [ 32%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Resolved] FAILED [ 33%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Closed] FAILED [ 35%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Duplicate] PASSED [ 36%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Open-Open] PASSED [ 37%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Open-Reopened] FAILED [ 38%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Open-Resolved] PASSED [ 40%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Open-Closed] PASSED [ 41%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Open-Duplicate] PASSED [ 42%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Reopened-Open] FAILED [ 44%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Reopened-Reopened] PASSED [ 45%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Reopened-Resolved] PASSED [ 46%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Reopened-Closed] PASSED [ 48%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Reopened-Duplicate] PASSED [ 49%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Open] FAILED [ 50%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Reopened] PASSED [ 51%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Resolved] PASSED [ 53%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Closed] PASSED [ 54%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Duplicate] FAILED [ 55%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Closed-Open] FAILED [ 57%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Closed-Reopened] PASSED [ 58%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Closed-Closed] PASSED [ 59%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Closed-Duplicate] FAILED [ 61%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Open] FAILED [ 62%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Reopened] PASSED [ 63%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Resolved] FAILED [ 64%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Closed] FAILED [ 66%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Duplicate] PASSED [ 67%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Open-Open] PASSED [ 68%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Open-Reopened] FAILED [ 70%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Open-Resolved] PASSED [ 71%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Open-Closed] PASSED [ 72%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Open-Duplicate] PASSED [ 74%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Reopened-Open] FAILED [ 75%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Reopened-Reopened] PASSED [ 76%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Reopened-Resolved] PASSED [ 77%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Reopened-Closed] PASSED [ 79%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Reopened-Duplicate] PASSED [ 80%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Open] FAILED [ 81%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Reopened] PASSED [ 83%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Resolved] PASSED [ 84%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Closed] PASSED [ 85%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Duplicate] FAILED [ 87%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Open] FAILED [ 88%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Reopened] PASSED [ 89%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Resolved] FAILED [ 90%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Closed] PASSED [ 92%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Duplicate] FAILED [ 93%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Open] FAILED [ 94%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Reopened] PASSED [ 96%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Resolved] FAILED [ 97%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Closed] FAILED [ 98%]
+tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Duplicate] PASSED [100%]
+
+=================================== FAILURES ===================================
+_______ test_closed_to_resolved_is_rejected_without_a_write[staff-form] ________
+
+client = <django.test.client.Client object at 0x7e2932ebb230>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e62610>
+staff = <User: sqm-staff>, route = 'staff-form'
+
+    @pytest.mark.parametrize("route", ["staff-form", "ticket-api"])
+    def test_closed_to_resolved_is_rejected_without_a_write(client, make_ticket, staff, route):
+        ticket = make_ticket(status=Ticket.CLOSED_STATUS, resolution="Existing resolution")
+        before = (ticket.status, ticket.resolution, ticket.modified)
+        client.force_login(staff)
+        if route == "staff-form":
+            response = client.post(reverse("helpdesk:update", args=[ticket.pk]), {
+                "queue": ticket.queue_id, "title": ticket.title, "priority": ticket.priority,
+                "submitter_email": ticket.submitter_email, "new_status": Ticket.RESOLVED_STATUS,
+            })
+        else:
+            response = client.patch(reverse("helpdesk:ticket-detail", args=[ticket.pk]),
+                                    {"status": Ticket.RESOLVED_STATUS},
+                                    content_type="application/json")
+        ticket.refresh_from_db()
+        actual = (ticket.status, ticket.resolution, ticket.modified)
+        history_count = ticket.followup_set.count()
+>       assert actual == before and history_count == 0, (
+            f"{route} returned HTTP {response.status_code}, persisted {actual}, "
+            f"and left {history_count} history rows. Expected {before} and zero rows."
+        )
+E       AssertionError: staff-form returned HTTP 302, persisted (3, '', datetime.datetime(2026, 11, 23, 14, 4, 18, 88467, tzinfo=datetime.timezone.utc)), and left 1 history rows. Expected (4, 'Existing resolution', datetime.datetime(2026, 11, 23, 14, 4, 17, 986207, tzinfo=datetime.timezone.utc)) and zero rows.
+E       assert ((3, '', datet...timezone.utc)) == (4, 'Existing...timezone.utc))
+E         
+E         At index 0 diff: 3 != 4
+E         
+E         Full diff: (-: missing in left side, +: extra in left side)
+E           (
+E         -     4,
+E         ?     ^
+E         +     3,
+E         ?     ^
+E         -     'Existing resolution',
+E         +     '',
+E         -     datetime.datetime(2026, 11, 23, 14, 4, 17, 986207, tzinfo=datetime.timezone.utc),
+E         ?                                               --------
+E         +     datetime.datetime(2026, 11, 23, 14, 4, 18, 88467, tzinfo=datetime.timezone.utc),
+E         ?                                             +++++++
+E           ))
+
+tests/team/requirements/test_closed_transition.py:24: AssertionError
+---------------------------- Captured stderr setup -----------------------------
+Creating test database for alias 'default'...
+_______ test_closed_to_resolved_is_rejected_without_a_write[ticket-api] ________
+
+client = <django.test.client.Client object at 0x7e29333a5590>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932a3a4b0>
+staff = <User: sqm-staff>, route = 'ticket-api'
+
+    @pytest.mark.parametrize("route", ["staff-form", "ticket-api"])
+    def test_closed_to_resolved_is_rejected_without_a_write(client, make_ticket, staff, route):
+        ticket = make_ticket(status=Ticket.CLOSED_STATUS, resolution="Existing resolution")
+        before = (ticket.status, ticket.resolution, ticket.modified)
+        client.force_login(staff)
+        if route == "staff-form":
+            response = client.post(reverse("helpdesk:update", args=[ticket.pk]), {
+                "queue": ticket.queue_id, "title": ticket.title, "priority": ticket.priority,
+                "submitter_email": ticket.submitter_email, "new_status": Ticket.RESOLVED_STATUS,
+            })
+        else:
+            response = client.patch(reverse("helpdesk:ticket-detail", args=[ticket.pk]),
+                                    {"status": Ticket.RESOLVED_STATUS},
+                                    content_type="application/json")
+        ticket.refresh_from_db()
+        actual = (ticket.status, ticket.resolution, ticket.modified)
+        history_count = ticket.followup_set.count()
+>       assert actual == before and history_count == 0, (
+            f"{route} returned HTTP {response.status_code}, persisted {actual}, "
+            f"and left {history_count} history rows. Expected {before} and zero rows."
+        )
+E       AssertionError: ticket-api returned HTTP 200, persisted (3, 'Existing resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 129528, tzinfo=datetime.timezone.utc)), and left 0 history rows. Expected (4, 'Existing resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 122457, tzinfo=datetime.timezone.utc)) and zero rows.
+E       assert ((3, 'Existing...timezone.utc)) == (4, 'Existing...timezone.utc))
+E         
+E         At index 0 diff: 3 != 4
+E         
+E         Full diff: (-: missing in left side, +: extra in left side)
+E           (
+E         -     4,
+E         ?     ^
+E         +     3,
+E         ?     ^
+E               'Existing resolution',
+E         -     datetime.datetime(2026, 11, 23, 14, 4, 18, 122457, tzinfo=datetime.timezone.utc),
+E         ?                                                   ^^^
+E         +     datetime.datetime(2026, 11, 23, 14, 4, 18, 129528, tzinfo=datetime.timezone.utc),
+E         ?                                                  ++ ^
+E           ))
+
+tests/team/requirements/test_closed_transition.py:24: AssertionError
+_______ test_configured_transition_and_history[staff-form-Open-Reopened] _______
+
+client = <django.test.client.Client object at 0x7e2932cd74d0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932a8c9e0>
+staff = <User: sqm-staff>, route = 'staff-form', source = 1, target = 2
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (2, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 202932, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 2, '')])
+E           assert (2, 'Previous..., (2, 2, '')]) == (1, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 2 != 1
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     1,
+E             ?     ^
+E             +     2,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 191416, tzinfo=datetime.timezone.utc),
+E             ?                                                ^ ^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 202932, tzinfo=datetime.timezone.utc),
+E             ?                                                ^^^ ^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             2,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_______ test_configured_transition_and_history[staff-form-Reopened-Open] _______
+
+client = <django.test.client.Client object at 0x7e2932a8e570>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932a3b270>
+staff = <User: sqm-staff>, route = 'staff-form', source = 2, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 289742, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (2, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 2
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     2,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 278249, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^ --
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 289742, tzinfo=datetime.timezone.utc),
+E             ?                                                 ++ ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_______ test_configured_transition_and_history[staff-form-Resolved-Open] _______
+
+client = <django.test.client.Client object at 0x7e2932afe170>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932ad9380>
+staff = <User: sqm-staff>, route = 'staff-form', source = 3, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 393187, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (3, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 3
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     3,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 381798, tzinfo=datetime.timezone.utc),
+E             ?                                                  - --
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 393187, tzinfo=datetime.timezone.utc),
+E             ?                                                 +++
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+____ test_configured_transition_and_history[staff-form-Resolved-Duplicate] _____
+
+client = <django.test.client.Client object at 0x7e2932afd130>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932ada560>
+staff = <User: sqm-staff>, route = 'staff-form', source = 3, target = 5
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 477469, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+E           assert (5, 'Previous..., (2, 5, '')]) == (3, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 5 != 3
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     3,
+E             ?     ^
+E             +     5,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 466052, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 477469, tzinfo=datetime.timezone.utc),
+E             ?                                                +++  ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             5,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+________ test_configured_transition_and_history[staff-form-Closed-Open] ________
+
+client = <django.test.client.Client object at 0x7e2932afead0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932adab90>
+staff = <User: sqm-staff>, route = 'staff-form', source = 4, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 496362, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 484764, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^ ^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 496362, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ ^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_____ test_configured_transition_and_history[staff-form-Closed-Duplicate] ______
+
+client = <django.test.client.Client object at 0x7e29330945f0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e44510>
+staff = <User: sqm-staff>, route = 'staff-form', source = 4, target = 5
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 637275, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+E           assert (5, 'Previous..., (2, 5, '')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 5 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     5,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 625329, tzinfo=datetime.timezone.utc),
+E             ?                                                   ---
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 637275, tzinfo=datetime.timezone.utc),
+E             ?                                                 ++ +
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             5,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+______ test_configured_transition_and_history[staff-form-Duplicate-Open] _______
+
+client = <django.test.client.Client object at 0x7e29330944b0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e454e0>
+staff = <User: sqm-staff>, route = 'staff-form', source = 5, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 655839, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 644443, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 655839, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^ +
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+____ test_configured_transition_and_history[staff-form-Duplicate-Resolved] _____
+
+client = <django.test.client.Client object at 0x7e2933096170>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e46b90>
+staff = <User: sqm-staff>, route = 'staff-form', source = 5, target = 3
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (3, '', datetime.datetime(2026, 11, 23, 14, 4, 18, 696669, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 3, '')])
+E           assert (3, '', datet..., (2, 3, '')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 3 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     3,
+E             ?     ^
+E             -     'Previous resolution',
+E             +     '',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 685045, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 696669, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             3,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_____ test_configured_transition_and_history[staff-form-Duplicate-Closed] ______
+
+client = <django.test.client.Client object at 0x7e2933094190>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e45e80>
+staff = <User: sqm-staff>, route = 'staff-form', source = 5, target = 4
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 302; stored status and history: (4, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 715710, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 4, '')])
+E           assert (4, 'Previous..., (2, 4, '')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 4 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     4,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 704230, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 715710, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             4,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_______ test_configured_transition_and_history[ticket-api-Open-Reopened] _______
+
+client = <django.test.client.Client object at 0x7e29330951d0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e46fb0>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 1, target = 2
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (2, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 766952, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (2, 'Previous...ntake note')]) == (1, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 2 != 1
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     1,
+E             ?     ^
+E             +     2,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 760377, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 766952, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_______ test_configured_transition_and_history[ticket-api-Reopened-Open] _______
+
+client = <django.test.client.Client object at 0x7e29331858b0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933073530>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 2, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 837453, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (1, 'Previous...ntake note')]) == (2, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 2
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     2,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 831019, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 837453, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_______ test_configured_transition_and_history[ticket-api-Resolved-Open] _______
+
+client = <django.test.client.Client object at 0x7e29333b2350>
+make_ticket = <function make_ticket.<locals>.create at 0x7e29330a7c10>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 3, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 926218, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (1, 'Previous...ntake note')]) == (3, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 3
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     3,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 919845, tzinfo=datetime.timezone.utc),
+E             ?                                                  - --
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 926218, tzinfo=datetime.timezone.utc),
+E             ?                                                 +++
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+____ test_configured_transition_and_history[ticket-api-Resolved-Duplicate] _____
+
+client = <django.test.client.Client object at 0x7e29334d6a30>
+make_ticket = <function make_ticket.<locals>.create at 0x7e293311d900>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 3, target = 5
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 996088, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (5, 'Previous...ntake note')]) == (3, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 5 != 3
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     3,
+E             ?     ^
+E             +     5,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 18, 989646, tzinfo=datetime.timezone.utc),
+E             ?                                                 -  ^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 18, 996088, tzinfo=datetime.timezone.utc),
+E             ?                                                   ^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+________ test_configured_transition_and_history[ticket-api-Closed-Open] ________
+
+client = <django.test.client.Client object at 0x7e29333b31b0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e293311ceb0>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 4, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 11469, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (1, 'Previous...ntake note')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 4989, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 11469, tzinfo=datetime.timezone.utc),
+E             ?                                                ++ ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_____ test_configured_transition_and_history[ticket-api-Closed-Duplicate] ______
+
+client = <django.test.client.Client object at 0x7e29333b0730>
+make_ticket = <function make_ticket.<locals>.create at 0x7e29331e4040>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 4, target = 5
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 65006, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (5, 'Previous...ntake note')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 5 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     5,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 58615, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ --
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 65006, tzinfo=datetime.timezone.utc),
+E             ?                                                + ^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+______ test_configured_transition_and_history[ticket-api-Duplicate-Open] _______
+
+client = <django.test.client.Client object at 0x7e29333b1770>
+make_ticket = <function make_ticket.<locals>.create at 0x7e29331e6140>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 5, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 80094, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (1, 'Previous...ntake note')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 73712, tzinfo=datetime.timezone.utc),
+E             ?                                                ^^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 80094, tzinfo=datetime.timezone.utc),
+E             ?                                                ^^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+____ test_configured_transition_and_history[ticket-api-Duplicate-Resolved] _____
+
+client = <django.test.client.Client object at 0x7e29333b1f90>
+make_ticket = <function make_ticket.<locals>.create at 0x7e293311ca90>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 5, target = 3
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (3, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 112886, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (3, 'Previous...ntake note')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 3 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     3,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 106525, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ ---
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 112886, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_____ test_configured_transition_and_history[ticket-api-Duplicate-Closed] ______
+
+client = <django.test.client.Client object at 0x7e29333b3d90>
+make_ticket = <function make_ticket.<locals>.create at 0x7e29330a6400>
+staff = <User: sqm-staff>, route = 'ticket-api', source = 5, target = 4
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 200; stored status and history: (4, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 127501, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+E           assert (4, 'Previous...ntake note')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 4 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     4,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 121091, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^ -
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 127501, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+______ test_configured_transition_and_history[followup-api-Open-Reopened] ______
+
+client = <django.test.client.Client object at 0x7e29334d5590>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e44300>
+staff = <User: sqm-staff>, route = 'followup-api', source = 1, target = 2
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (2, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 178584, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 2, '')])
+E           assert (2, 'Previous..., (2, 2, '')]) == (1, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 2 != 1
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     1,
+E             ?     ^
+E             +     2,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 169058, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 178584, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^  +
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             2,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+______ test_configured_transition_and_history[followup-api-Reopened-Open] ______
+
+client = <django.test.client.Client object at 0x7e29334d5310>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933156cf0>
+staff = <User: sqm-staff>, route = 'followup-api', source = 2, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 238769, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (2, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 2
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     2,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 229388, tzinfo=datetime.timezone.utc),
+E             ?                                                 --  ^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 238769, tzinfo=datetime.timezone.utc),
+E             ?                                                   ^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+______ test_configured_transition_and_history[followup-api-Resolved-Open] ______
+
+client = <django.test.client.Client object at 0x7e29334d4eb0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2932e46610>
+staff = <User: sqm-staff>, route = 'followup-api', source = 3, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 312949, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (3, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 3
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     3,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 304158, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ ^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 312949, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^ ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+___ test_configured_transition_and_history[followup-api-Resolved-Duplicate] ____
+
+client = <django.test.client.Client object at 0x7e293393b390>
+make_ticket = <function make_ticket.<locals>.create at 0x7e29331564b0>
+staff = <User: sqm-staff>, route = 'followup-api', source = 3, target = 5
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 372946, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+E           assert (5, 'Previous..., (2, 5, '')]) == (3, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 5 != 3
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     3,
+E             ?     ^
+E             +     5,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 364201, tzinfo=datetime.timezone.utc),
+E             ?                                                  ----
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 372946, tzinfo=datetime.timezone.utc),
+E             ?                                                 ++++
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             5,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_______ test_configured_transition_and_history[followup-api-Closed-Open] _______
+
+client = <django.test.client.Client object at 0x7e2933839810>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933409e80>
+staff = <User: sqm-staff>, route = 'followup-api', source = 4, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 389214, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 380382, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 389214, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^ ++
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_____ test_configured_transition_and_history[followup-api-Closed-Resolved] _____
+
+client = <django.test.client.Client object at 0x7e2933793110>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933409f30>
+staff = <User: sqm-staff>, route = 'followup-api', source = 4, target = 3
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (3, '', datetime.datetime(2026, 11, 23, 14, 4, 19, 420227, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 3, '')])
+E           assert (3, '', datet..., (2, 3, '')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 3 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     3,
+E             ?     ^
+E             -     'Previous resolution',
+E             +     '',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 411513, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 420227, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             3,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+____ test_configured_transition_and_history[followup-api-Closed-Duplicate] _____
+
+client = <django.test.client.Client object at 0x7e2933793a70>
+make_ticket = <function make_ticket.<locals>.create at 0x7e29333705c0>
+staff = <User: sqm-staff>, route = 'followup-api', source = 4, target = 5
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 450926, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+E           assert (5, 'Previous..., (2, 5, '')]) == (4, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 5 != 4
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     4,
+E             ?     ^
+E             +     5,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 442173, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ ^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 450926, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^ ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             5,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+_____ test_configured_transition_and_history[followup-api-Duplicate-Open] ______
+
+client = <django.test.client.Client object at 0x7e29337922b0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933371a60>
+staff = <User: sqm-staff>, route = 'followup-api', source = 5, target = 1
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 467480, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+E           assert (1, 'Previous..., (2, 1, '')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 1 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     1,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 458651, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ ^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 467480, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^^ ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             1,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+___ test_configured_transition_and_history[followup-api-Duplicate-Resolved] ____
+
+client = <django.test.client.Client object at 0x7e2933790ff0>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933370250>
+staff = <User: sqm-staff>, route = 'followup-api', source = 5, target = 3
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (3, '', datetime.datetime(2026, 11, 23, 14, 4, 19, 498542, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 3, '')])
+E           assert (3, '', datet..., (2, 3, '')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 3 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     3,
+E             ?     ^
+E             -     'Previous resolution',
+E             +     '',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 489345, tzinfo=datetime.timezone.utc),
+E             ?                                                  ^^ ^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 498542, tzinfo=datetime.timezone.utc),
+E             ?                                                 + ^ ^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             3,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+____ test_configured_transition_and_history[followup-api-Duplicate-Closed] _____
+
+client = <django.test.client.Client object at 0x7e2933793c50>
+make_ticket = <function make_ticket.<locals>.create at 0x7e2933373690>
+staff = <User: sqm-staff>, route = 'followup-api', source = 5, target = 4
+
+    @pytest.mark.parametrize("route,source,target", MATRIX)
+    def test_configured_transition_and_history(client, make_ticket, staff, route, source, target):
+        ticket = make_ticket(status=source, resolution="Previous resolution", assigned_to=staff)
+        existing = ticket.followup_set.create(date=timezone.now(), title="Intake", comment="Intake note")
+        before = snapshot(ticket)
+        client.force_login(staff)
+    
+        response = send_status(client, route, ticket, target)
+        after = snapshot(ticket)
+        if target not in ALLOWED[source]:
+>           assert after == before, f"HTTP {response.status_code}; stored status and history: {after}"
+E           AssertionError: HTTP 201; stored status and history: (4, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 514517, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 4, '')])
+E           assert (4, 'Previous..., (2, 4, '')]) == (5, 'Previous...ntake note')])
+E             
+E             At index 0 diff: 4 != 5
+E             
+E             Full diff: (-: missing in left side, +: extra in left side)
+E               (
+E             -     5,
+E             ?     ^
+E             +     4,
+E             ?     ^
+E                   'Previous resolution',
+E             -     datetime.datetime(2026, 11, 23, 14, 4, 19, 505829, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^ ^^^
+E             +     datetime.datetime(2026, 11, 23, 14, 4, 19, 514517, tzinfo=datetime.timezone.utc),
+E             ?                                                 ^^ ^^
+E                   1,
+E                   [
+E                       (
+E                           1,
+E                           None,
+E                           'Intake note',
+E                       ),
+E             +         (
+E             +             2,
+E             +             4,
+E             +             '',
+E             +         ),
+E                   ],
+E               )
+
+tests/team/requirements/test_staff_transition_matrix.py:50: AssertionError
+=============================== warnings summary ===============================
+tests/team/requirements/test_staff_detail_close.py::test_staff_detail_close_persists_allowed_closed_transition[unassigned]
+tests/team/requirements/test_staff_detail_close.py::test_staff_detail_close_persists_allowed_closed_transition[assigned]
+  /home/runner/work/django-helpdesk/django-helpdesk/src/helpdesk/templated_email.py:155: RemovedInDjango2028Warning: Django 2028 will not have a default mailer. Configure settings.MAILERS to avoid errors when sending email.
+    return msg.send()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/django-helpdesk/django-helpdesk/requirement-results/requirements-junit.xml -
+=========================== short test summary info ============================
+FAILED tests/team/requirements/test_closed_transition.py::test_closed_to_resolved_is_rejected_without_a_write[staff-form] - AssertionError: staff-form returned HTTP 302, persisted (3, '', datetime.datetime(2026, 11, 23, 14, 4, 18, 88467, tzinfo=datetime.timezone.utc)), and left 1 history rows. Expected (4, 'Existing resolution', datetime.datetime(2026, 11, 23, 14, 4, 17, 986207, tzinfo=datetime.timezone.utc)) and zero rows.
+assert ((3, '', datet...timezone.utc)) == (4, 'Existing...timezone.utc))
+  
+  At index 0 diff: 3 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     3,
+  ?     ^
+  -     'Existing resolution',
+  +     '',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 17, 986207, tzinfo=datetime.timezone.utc),
+  ?                                               --------
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 88467, tzinfo=datetime.timezone.utc),
+  ?                                             +++++++
+    ))
+FAILED tests/team/requirements/test_closed_transition.py::test_closed_to_resolved_is_rejected_without_a_write[ticket-api] - AssertionError: ticket-api returned HTTP 200, persisted (3, 'Existing resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 129528, tzinfo=datetime.timezone.utc)), and left 0 history rows. Expected (4, 'Existing resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 122457, tzinfo=datetime.timezone.utc)) and zero rows.
+assert ((3, 'Existing...timezone.utc)) == (4, 'Existing...timezone.utc))
+  
+  At index 0 diff: 3 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     3,
+  ?     ^
+        'Existing resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 122457, tzinfo=datetime.timezone.utc),
+  ?                                                   ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 129528, tzinfo=datetime.timezone.utc),
+  ?                                                  ++ ^
+    ))
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Open-Reopened] - AssertionError: HTTP 302; stored status and history: (2, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 202932, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 2, '')])
+assert (2, 'Previous..., (2, 2, '')]) == (1, 'Previous...ntake note')])
+  
+  At index 0 diff: 2 != 1
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     1,
+  ?     ^
+  +     2,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 191416, tzinfo=datetime.timezone.utc),
+  ?                                                ^ ^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 202932, tzinfo=datetime.timezone.utc),
+  ?                                                ^^^ ^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             2,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Reopened-Open] - AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 289742, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (2, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 2
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     2,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 278249, tzinfo=datetime.timezone.utc),
+  ?                                                  ^ --
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 289742, tzinfo=datetime.timezone.utc),
+  ?                                                 ++ ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Open] - AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 393187, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (3, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 3
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     3,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 381798, tzinfo=datetime.timezone.utc),
+  ?                                                  - --
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 393187, tzinfo=datetime.timezone.utc),
+  ?                                                 +++
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Resolved-Duplicate] - AssertionError: HTTP 302; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 477469, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+assert (5, 'Previous..., (2, 5, '')]) == (3, 'Previous...ntake note')])
+  
+  At index 0 diff: 5 != 3
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     3,
+  ?     ^
+  +     5,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 466052, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 477469, tzinfo=datetime.timezone.utc),
+  ?                                                +++  ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             5,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Closed-Open] - AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 496362, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 484764, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^ ^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 496362, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ ^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Closed-Duplicate] - AssertionError: HTTP 302; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 637275, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+assert (5, 'Previous..., (2, 5, '')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 5 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     5,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 625329, tzinfo=datetime.timezone.utc),
+  ?                                                   ---
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 637275, tzinfo=datetime.timezone.utc),
+  ?                                                 ++ +
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             5,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Open] - AssertionError: HTTP 302; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 655839, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 644443, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 655839, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^ +
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Resolved] - AssertionError: HTTP 302; stored status and history: (3, '', datetime.datetime(2026, 11, 23, 14, 4, 18, 696669, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 3, '')])
+assert (3, '', datet..., (2, 3, '')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 3 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     3,
+  ?     ^
+  -     'Previous resolution',
+  +     '',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 685045, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 696669, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             3,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[staff-form-Duplicate-Closed] - AssertionError: HTTP 302; stored status and history: (4, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 715710, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 4, '')])
+assert (4, 'Previous..., (2, 4, '')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 4 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     4,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 704230, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 715710, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             4,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Open-Reopened] - AssertionError: HTTP 200; stored status and history: (2, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 766952, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (2, 'Previous...ntake note')]) == (1, 'Previous...ntake note')])
+  
+  At index 0 diff: 2 != 1
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     1,
+  ?     ^
+  +     2,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 760377, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 766952, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Reopened-Open] - AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 837453, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (1, 'Previous...ntake note')]) == (2, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 2
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     2,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 831019, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 837453, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Open] - AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 926218, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (1, 'Previous...ntake note')]) == (3, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 3
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     3,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 919845, tzinfo=datetime.timezone.utc),
+  ?                                                  - --
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 926218, tzinfo=datetime.timezone.utc),
+  ?                                                 +++
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Resolved-Duplicate] - AssertionError: HTTP 200; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 18, 996088, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (5, 'Previous...ntake note')]) == (3, 'Previous...ntake note')])
+  
+  At index 0 diff: 5 != 3
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     3,
+  ?     ^
+  +     5,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 18, 989646, tzinfo=datetime.timezone.utc),
+  ?                                                 -  ^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 18, 996088, tzinfo=datetime.timezone.utc),
+  ?                                                   ^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Closed-Open] - AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 11469, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (1, 'Previous...ntake note')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 4989, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 11469, tzinfo=datetime.timezone.utc),
+  ?                                                ++ ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Closed-Duplicate] - AssertionError: HTTP 200; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 65006, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (5, 'Previous...ntake note')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 5 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     5,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 58615, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ --
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 65006, tzinfo=datetime.timezone.utc),
+  ?                                                + ^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Open] - AssertionError: HTTP 200; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 80094, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (1, 'Previous...ntake note')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 73712, tzinfo=datetime.timezone.utc),
+  ?                                                ^^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 80094, tzinfo=datetime.timezone.utc),
+  ?                                                ^^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Resolved] - AssertionError: HTTP 200; stored status and history: (3, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 112886, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (3, 'Previous...ntake note')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 3 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     3,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 106525, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ ---
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 112886, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[ticket-api-Duplicate-Closed] - AssertionError: HTTP 200; stored status and history: (4, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 127501, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note')])
+assert (4, 'Previous...ntake note')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 4 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     4,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 121091, tzinfo=datetime.timezone.utc),
+  ?                                                  ^ -
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 127501, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Open-Reopened] - AssertionError: HTTP 201; stored status and history: (2, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 178584, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 2, '')])
+assert (2, 'Previous..., (2, 2, '')]) == (1, 'Previous...ntake note')])
+  
+  At index 0 diff: 2 != 1
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     1,
+  ?     ^
+  +     2,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 169058, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 178584, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^  +
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             2,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Reopened-Open] - AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 238769, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (2, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 2
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     2,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 229388, tzinfo=datetime.timezone.utc),
+  ?                                                 --  ^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 238769, tzinfo=datetime.timezone.utc),
+  ?                                                   ^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Open] - AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 312949, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (3, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 3
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     3,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 304158, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 312949, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^ ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Resolved-Duplicate] - AssertionError: HTTP 201; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 372946, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+assert (5, 'Previous..., (2, 5, '')]) == (3, 'Previous...ntake note')])
+  
+  At index 0 diff: 5 != 3
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     3,
+  ?     ^
+  +     5,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 364201, tzinfo=datetime.timezone.utc),
+  ?                                                  ----
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 372946, tzinfo=datetime.timezone.utc),
+  ?                                                 ++++
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             5,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Open] - AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 389214, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 380382, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 389214, tzinfo=datetime.timezone.utc),
+  ?                                                  ^ ++
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Resolved] - AssertionError: HTTP 201; stored status and history: (3, '', datetime.datetime(2026, 11, 23, 14, 4, 19, 420227, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 3, '')])
+assert (3, '', datet..., (2, 3, '')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 3 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     3,
+  ?     ^
+  -     'Previous resolution',
+  +     '',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 411513, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 420227, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             3,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Closed-Duplicate] - AssertionError: HTTP 201; stored status and history: (5, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 450926, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 5, '')])
+assert (5, 'Previous..., (2, 5, '')]) == (4, 'Previous...ntake note')])
+  
+  At index 0 diff: 5 != 4
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     4,
+  ?     ^
+  +     5,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 442173, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 450926, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^ ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             5,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Open] - AssertionError: HTTP 201; stored status and history: (1, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 467480, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 1, '')])
+assert (1, 'Previous..., (2, 1, '')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 1 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     1,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 458651, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 467480, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^^ ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             1,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Resolved] - AssertionError: HTTP 201; stored status and history: (3, '', datetime.datetime(2026, 11, 23, 14, 4, 19, 498542, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 3, '')])
+assert (3, '', datet..., (2, 3, '')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 3 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     3,
+  ?     ^
+  -     'Previous resolution',
+  +     '',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 489345, tzinfo=datetime.timezone.utc),
+  ?                                                  ^^ ^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 498542, tzinfo=datetime.timezone.utc),
+  ?                                                 + ^ ^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             3,
+  +             '',
+  +         ),
+        ],
+    )
+FAILED tests/team/requirements/test_staff_transition_matrix.py::test_configured_transition_and_history[followup-api-Duplicate-Closed] - AssertionError: HTTP 201; stored status and history: (4, 'Previous resolution', datetime.datetime(2026, 11, 23, 14, 4, 19, 514517, tzinfo=datetime.timezone.utc), 1, [(1, None, 'Intake note'), (2, 4, '')])
+assert (4, 'Previous..., (2, 4, '')]) == (5, 'Previous...ntake note')])
+  
+  At index 0 diff: 4 != 5
+  
+  Full diff: (-: missing in left side, +: extra in left side)
+    (
+  -     5,
+  ?     ^
+  +     4,
+  ?     ^
+        'Previous resolution',
+  -     datetime.datetime(2026, 11, 23, 14, 4, 19, 505829, tzinfo=datetime.timezone.utc),
+  ?                                                 ^ ^^^
+  +     datetime.datetime(2026, 11, 23, 14, 4, 19, 514517, tzinfo=datetime.timezone.utc),
+  ?                                                 ^^ ^^
+        1,
+        [
+            (
+                1,
+                None,
+                'Intake note',
+            ),
+  +         (
+  +             2,
+  +             4,
+  +             '',
+  +         ),
+        ],
+    )
+================== 30 failed, 47 passed, 2 warnings in 2.87s ===================

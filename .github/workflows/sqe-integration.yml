@@ -1,0 +1,130 @@
+name: SQE integration suites
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  PYTHONPATH: src
+
+jobs:
+  api:
+    name: SQE API, access and recovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Install test dependencies
+        run: python -m pip install -e . -r tests/team/mutation/test-dependencies.txt
+      - name: Run generated API cases and workflow tests
+        run: >-
+          python -m pytest --ds=tests.test_settings --junitxml=sqe-api.xml
+          tests/team/api tests/team/component tests/team/unit/test_workflow_recovery.py
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: sqe-api-results
+          path: sqe-api.xml
+
+  browser:
+    name: SQE browser, accessibility and passive security
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Install Chromium, static assets and audit tools
+        id: setup
+        run: |
+          python -m pip install -e . -r tests/team/mutation/test-dependencies.txt playwright==1.64.0
+          python -m playwright install --with-deps chromium
+          npm install --global corepack
+          corepack enable
+          yarn install --immutable
+          make static-vendor
+          npm ci --prefix tests/team/browser/audit
+      - name: Run ticket journeys
+        run: >-
+          python -m pytest --ds=tests.test_settings -o junit_family=legacy
+          --junitxml=sqe-browser.xml tests/team/browser/test_ticket_journeys.py
+      - name: Capture accessibility audits
+        if: ${{ !cancelled() && steps.setup.outcome == 'success' }}
+        env:
+          SQE_ACCESSIBILITY_OUTPUT: sqe-accessibility
+        run: >-
+          python -m pytest --ds=tests.test_settings --junitxml=sqe-accessibility.xml
+          tests/team/browser/test_accessibility_audits.py
+      - name: Run passive ZAP against local role scenarios
+        if: ${{ !cancelled() && steps.setup.outcome == 'success' }}
+        run: |
+          archive="$RUNNER_TEMP/ZAP_2.17.0_Linux.tar.gz"
+          curl -fsSL https://github.com/zaproxy/zaproxy/releases/download/v2.17.0/ZAP_2.17.0_Linux.tar.gz -o "$archive"
+          echo "efe799aaa3627db683b43f00c9c210aea0b75c00cc8f0a0f0434d12bb3ddde5a  $archive" | sha256sum -c -
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+          python tests/team/browser/zap_passive.py "$RUNNER_TEMP/ZAP_2.17.0/zap-2.17.0.jar" sqe-security
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: sqe-browser-results
+          path: |
+            sqe-browser.xml
+            sqe-accessibility.xml
+            sqe-accessibility/*.png
+            sqe-security/roles-junit.xml
+            sqe-security/roles-pytest.txt
+            sqe-security/zap-passive.json
+
+  performance:
+    name: SQE ticket-detail performance
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - name: Install test dependencies and k6
+        run: |
+          python -m pip install -e . -r tests/team/mutation/test-dependencies.txt
+          archive="$RUNNER_TEMP/k6-v2.0.0-linux-amd64.tar.gz"
+          curl -fsSL https://github.com/grafana/k6/releases/download/v2.0.0/k6-v2.0.0-linux-amd64.tar.gz -o "$archive"
+          echo "2ae87d976f6cdba17185bdd980d8819a3a98e9092c6f0638cd58272ecefc8b90  $archive" | sha256sum -c -
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+      - name: Run the recorded k6 workload and thresholds
+        env:
+          SQE_K6_EXE: ${{ runner.temp }}/k6-v2.0.0-linux-amd64/k6
+          SQE_K6_OUTPUT: sqe-performance
+        run: >-
+          python -m pytest --ds=tests.test_settings --junitxml=sqe-performance.xml
+          tests/team/performance/run_workload.py
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: sqe-performance-results
+          path: |
+            sqe-performance.xml
+            sqe-performance/*.summary.json
+            sqe-performance/run-manifest.json
